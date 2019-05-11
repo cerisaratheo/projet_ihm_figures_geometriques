@@ -6,6 +6,8 @@ import java.util.*;
 import javax.swing.JPanel;
 
 public class VueDessin extends JPanel implements Observer{
+	
+	private DessinModele dessin;
 
 	public VueDessin() {
 		

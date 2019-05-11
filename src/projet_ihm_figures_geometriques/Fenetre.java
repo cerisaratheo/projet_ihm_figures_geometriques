@@ -9,6 +9,8 @@ public class Fenetre {
 	
 	public Fenetre(String str, int i, int j) {
 		
+		principal = new JPanel();
+		choix = new JPanel();
 		
 	}
 
