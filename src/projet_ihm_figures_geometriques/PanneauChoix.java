@@ -1,6 +1,11 @@
 package projet_ihm_figures_geometriques;
 
-public class PanneauChoix {
+import javax.swing.JPanel;
+
+public class PanneauChoix extends JPanel{
+	
+	DessinModele dmodele;
+	VueDessin vdessin;
 
 	PanneauChoix(VueDessin vd) {
 		

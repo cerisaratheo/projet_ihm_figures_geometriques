@@ -5,8 +5,10 @@ import javax.swing.JPanel;
 public class Fenetre {
 	
 	JPanel principal, choix;
+	VueDessin vdessin;
 	
 	public Fenetre(String str, int i, int j) {
+		
 		
 	}
 
