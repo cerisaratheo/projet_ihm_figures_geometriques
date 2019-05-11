@@ -16,7 +16,7 @@ public class VueDessin extends JPanel implements Observer{
 	}
 	
 	public void paintComponent(Graphics g) {
-		super(g);
+		super.paintComponent(g);
 		
 	}
 }
