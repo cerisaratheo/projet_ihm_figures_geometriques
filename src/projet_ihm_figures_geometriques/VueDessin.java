@@ -11,9 +11,11 @@ public class VueDessin extends JPanel implements Observer{
 
 	public VueDessin() {
 		
+		dessin = new DessinModele();
 	}
 	
 	public void update(Observable obs, Object obj) {
+		
 		
 	}
 	

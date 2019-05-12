@@ -9,5 +9,7 @@ public class PanneauChoix extends JPanel{
 
 	PanneauChoix(VueDessin vd) {
 		
+		vdessin = vd;
+		
 	}
 }

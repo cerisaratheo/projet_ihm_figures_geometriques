@@ -6,5 +6,6 @@ public class DessinModele extends Observable{
 
 	public DessinModele() {
 		
+		
 	}
 }
