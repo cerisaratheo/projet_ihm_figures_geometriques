@@ -1,4 +1,4 @@
-package projet_ihm_figures_geometriques;
+package modele;
 
 import java.util.Observable;
 

@@ -1,7 +1,13 @@
-package projet_ihm_figures_geometriques;
+package controleur;
 
+import java.awt.Color;
+
+import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+
+import modele.DessinModele;
+import vue.VueDessin;
 
 public class PanneauChoix extends JPanel{
 	
@@ -11,7 +17,10 @@ public class PanneauChoix extends JPanel{
 	PanneauChoix(VueDessin vd) {
 		
 		vdessin = vd;
-		JRadioButton noouvFig, mainLevee, manip;
-		
+	}
+	
+	public Color determineCouleur(int i) {
+		Color c = null;
+		return c;
 	}
 }

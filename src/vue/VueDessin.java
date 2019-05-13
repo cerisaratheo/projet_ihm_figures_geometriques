@@ -1,9 +1,11 @@
-package projet_ihm_figures_geometriques;
+package vue;
 
 import java.awt.*;
 import java.util.*;
 
 import javax.swing.JPanel;
+
+import modele.DessinModele;
 
 public class VueDessin extends JPanel implements Observer{
 	
