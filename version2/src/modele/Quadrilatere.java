@@ -1,6 +1,6 @@
 package modele;
 
-public class Quadrilatere {
+public class Quadrilatere extends Polygone {
 
 	public Quadrilatere() {
 		

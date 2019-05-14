@@ -1,8 +1,8 @@
 package modele;
 
-import java.awt.Graphics;
+import java.awt.*;
 
-public class Polygone {
+public class Polygone extends FigureColoree {
 
 	private Polygon p;
 	

@@ -1,5 +1,7 @@
 package modele;
 
+import java.awt.*;
+
 public class FigureColoree {
 
 	static final private int TAILLE_CARRE_SELECTION = 5;
