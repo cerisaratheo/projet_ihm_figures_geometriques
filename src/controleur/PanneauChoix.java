@@ -10,13 +10,31 @@ import javax.swing.JRadioButton;
 import modele.DessinModele;
 import vue.VueDessin;
 
-public class PanneauChoix extends JPanel{
+public class PanneauChoix extends JComboBox{
 	
 	private DessinModele dmodele;
 	private VueDessin vdessin;
 	private JRadioButton nouvelleFigure, traceMainLeve, manip;
+	private String[] listFig = { "choisissez une figure", "b", "c", "d", "e" };
+	private JComboBox figList; 
+	private String[] listCoul = { "choisissez une couleur", "b", "c", "d", "e" };
+	private JComboBox coulList;
 	
-	
+	public JComboBox getFigList() {
+		return figList;
+	}
+
+	public JComboBox getCoulList() {
+		return coulList;
+	}
+
+	public void setCoulList(JComboBox coulList) {
+		this.coulList = coulList;
+	}
+
+	public void setFigList(JComboBox figList) {
+		this.figList = figList;
+	}
 
 	public JRadioButton getNouvelleFigure() {
 		return nouvelleFigure;
@@ -50,6 +68,10 @@ public class PanneauChoix extends JPanel{
 		bg.add(nouvelleFigure);
 		bg.add(traceMainLeve);
 		bg.add(manip);
+		figList = new JComboBox(listFig);
+		figList.setSelectedIndex(0);
+		coulList = new JComboBox(listCoul);
+		coulList.setSelectedIndex(0);
 		vdessin = vd;
 	}
 	

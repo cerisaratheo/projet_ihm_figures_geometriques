@@ -16,7 +16,7 @@ public class Fenetre {
 
 	public static void main(String[] args) {
 
-		JFrame fenetre = new JFrame("figures geometriques");
+		JFrame fenetre = new JFrame("Figures Géométriques");
 		fenetre.setDefaultCloseOperation(fenetre.EXIT_ON_CLOSE);
 		fenetre.setPreferredSize(new Dimension(1000, 700));
 		PanneauChoix pc = new PanneauChoix(vdessin);
@@ -30,6 +30,8 @@ public class Fenetre {
 		radioBox.add(pc.getNouvelleFigure());
 		radioBox.add(pc.getTraceMainLeve());
 		radioBox.add(pc.getManip());
+		comboBox.add(pc.getFigList());
+		comboBox.add(pc.getCoulList());
 		choix.add(radioBox, BorderLayout.NORTH);
 		choix.add(comboBox, BorderLayout.CENTER);
 		fenetre.add(choix, BorderLayout.NORTH);
