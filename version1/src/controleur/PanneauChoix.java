@@ -15,9 +15,9 @@ public class PanneauChoix extends JComboBox{
 	private DessinModele dmodele;
 	private VueDessin vdessin;
 	private JRadioButton nouvelleFigure, traceMainLeve, manip;
-	private String[] listFig = { "choisissez une figure", "b", "c", "d", "e" };
+	private String[] listFig = { "choisissez une figure", "quadrilataire"};
 	private JComboBox figList; 
-	private String[] listCoul = { "choisissez une couleur", "b", "c", "d", "e" };
+	private String[] listCoul = { "choisissez une couleur", "bleu", "rouge", "vert", "jaune" };
 	private JComboBox coulList;
 	
 	public JComboBox getFigList() {
