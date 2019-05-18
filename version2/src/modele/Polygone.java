@@ -20,5 +20,6 @@ public class Polygone extends FigureColoree {
 	
 	public void modifierPoints(Point[] p) {
 		
+		
 	}
 }

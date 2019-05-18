@@ -1,14 +1,18 @@
 package modele;
 
-import java.util.ArrayList;
-import java.util.Observable;
+import java.util.*;
 
-public class DessinModele extends Observable{
+public class DessinModele extends Observable {
 	
 	private ArrayList<FigureColoree> lfc;
 	private FigureColoree figureEnCours;
 	private int nbClic;
 	private Point[] pointsCliques;
+	
+	public ArrayList<FigureColoree> getLfc() {
+		
+		return this.lfc;
+	}
 
 	public DessinModele() {
 		
@@ -25,5 +29,9 @@ public class DessinModele extends Observable{
 
 		pointsCliques[0] = new Point(x,y);
 		++nbClic;
+		if (nbClic == figureEnCours.nbPoints()) {
+			lfc.add(figureEnCours);
+			
+		}
 	}
 }

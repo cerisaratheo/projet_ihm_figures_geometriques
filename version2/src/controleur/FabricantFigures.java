@@ -13,7 +13,7 @@ public class FabricantFigures implements MouseListener {
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
 
-		
+		model.ajoutePoint(arg0.getX(), arg0.getY());
 	}
 
 	@Override
@@ -40,8 +40,9 @@ public class FabricantFigures implements MouseListener {
 		
 	}
 	
-	public FabricantFigures(FigureColoree fc) {
+	public FabricantFigures(DessinModele dm) {
 		
+		this.model=dm;
 		
 	}
 

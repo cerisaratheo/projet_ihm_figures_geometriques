@@ -2,7 +2,7 @@ package modele;
 
 import java.awt.*;
 
-public class FigureColoree {
+public abstract class FigureColoree {
 
 	static final private int TAILLE_CARRE_SELECTION = 5;
 	private boolean selected;
@@ -12,18 +12,12 @@ public class FigureColoree {
 		
 	}
 	
-	public int nbPoints() {
-		
-	}
+	public abstract int nbPoints();
 	
-	public int nbClics() {
-		
-	}
+	public abstract int nbClics();
 	
-	public void modifierPoints(Point[] p) {
+	public abstract void modifierPoints(Point[] p);
 		
-	}
-	
 	public void affiche(Graphics g) {
 		
 	}
@@ -36,7 +30,7 @@ public class FigureColoree {
 		
 	}
 	
-	public void changeCouleur(Point[] p) {
+	public void changeCouleur(Color c) {
 		
 	}
 }

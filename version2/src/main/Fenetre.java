@@ -20,11 +20,11 @@ public class Fenetre {
 		JFrame fenetre = new JFrame("Figures Géométriques");
 		fenetre.setDefaultCloseOperation(fenetre.EXIT_ON_CLOSE);
 		fenetre.setPreferredSize(new Dimension(1000, 700));
-		PanneauChoix pc = new PanneauChoix(vdessin);
+		PanneauChoix pc = new PanneauChoix();
 		principal = new JPanel();
 		choix = new JPanel();
 		choix.setLayout(new BorderLayout());
-		JPanel radioBox = new JPanel();
+		JPanel radioBox = new JPanel(); 
 		JPanel comboBox = new JPanel();
 		radioBox.add(pc.getNouvelleFigure());
 		radioBox.add(pc.getTraceMainLeve());
