@@ -10,15 +10,15 @@ public class Point {
 	}
 	
 	public double distance(Point p) {
-		
+		return 0;
 	}
 	
 	public int rendreX() {
-		
+		return 0;
 	}
 	
 	public int rendreY() {
-		
+		return 0;
 	}
 	
 	public void incrementerX(int x) {

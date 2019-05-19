@@ -31,6 +31,6 @@ public abstract class FigureColoree {
 	}
 	
 	public void changeCouleur(Color c) {
-		
+		this.couleur=c;
 	}
 }

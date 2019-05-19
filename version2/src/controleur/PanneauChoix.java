@@ -1,5 +1,6 @@
 package controleur;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +15,7 @@ import modele.FigureColoree;
 import modele.Quadrilatere;
 import vue.VueDessin;
 
-public class PanneauChoix extends JComboBox{
+public class PanneauChoix extends JPanel {
 	
 	private DessinModele dmodele;
 	private JRadioButton nouvelleFigure, traceMainLeve, manip;
@@ -22,48 +23,9 @@ public class PanneauChoix extends JComboBox{
 	private JComboBox figList; 
 	private String[] listCoul = { "Choisissez une couleur", "Bleu", "Rouge", "Vert", "Jaune" };
 	private JComboBox coulList;
-	
-	public JComboBox getFigList() {
-		return figList;
-	}
 
-	public JComboBox getCoulList() {
-		return coulList;
-	}
-
-	public void setCoulList(JComboBox coulList) {
-		this.coulList = coulList;
-	}
-
-	public void setFigList(JComboBox figList) {
-		this.figList = figList;
-	}
-
-	public JRadioButton getNouvelleFigure() {
-		return nouvelleFigure;
-	}
-
-	public void setNouvelleFigure(JRadioButton nouvelleFigure) {
-		this.nouvelleFigure = nouvelleFigure;
-	}
-
-	public JRadioButton getTraceMainLeve() {
-		return traceMainLeve;
-	}
-
-	public void setTraceMainLeve(JRadioButton traceMainLeve) {
-		this.traceMainLeve = traceMainLeve;
-	}
-
-	public JRadioButton getManip() {
-		return manip;
-	}
-
-	public void setManip(JRadioButton manip) {
-		this.manip = manip;
-	}
-
-	public PanneauChoix() {
+	public PanneauChoix(DessinModele m) {
+		dmodele=m;
 		ButtonGroup bg = new ButtonGroup();
 		nouvelleFigure = new JRadioButton("Nouvelle Figure");
 		traceMainLeve = new JRadioButton("Trace a main levee");
@@ -76,23 +38,78 @@ public class PanneauChoix extends JComboBox{
 		coulList = new JComboBox(listCoul);
 		coulList.setSelectedIndex(0);
 		
-		this.addActionListener(new ActionListener () {
+		nouvelleFigure.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		
+		traceMainLeve.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		
+		manip.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+		});
+		
+		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
-				switch(getSelectedIndex ()) {
+				if (dmodele==null) return;
+				switch(figList.getSelectedIndex ()) {
 				case 1 :
 					dmodele.construit(new Quadrilatere());
-					repaint();
+					figList.repaint();
 				break;
 				default:
 					break;
 				}
 			}
 		});
+		
+		coulList.addActionListener(new ActionListener () {
+			public void actionPerformed(ActionEvent e) {
+				if (dmodele==null) return;
+				dmodele.changeCoul(dmodele.getFigureEnCours(), determineCouleur(coulList.getSelectedIndex()));
+			}
+		});
+		
+		setLayout(new BorderLayout());
+		JPanel radioBox = new JPanel(); 
+		JPanel comboBox = new JPanel();
+		radioBox.add(nouvelleFigure);
+		radioBox.add(traceMainLeve);
+		radioBox.add(manip);
+		comboBox.add(figList);
+		comboBox.add(coulList);
+		add(radioBox, BorderLayout.NORTH);
+		add(comboBox, BorderLayout.SOUTH);
 	}
 	
 	public Color determineCouleur(int i) {
-		Color c = null;
-		return c;
+		switch(i) {
+		case 0:
+			return Color.BLACK;
+		case 1 :
+			return Color.BLUE;
+		case 2:
+			return Color.RED;
+		case 3:
+			return Color.GREEN;
+		case 4:
+			return Color.YELLOW;
+		default:
+			return Color.WHITE;
+		}
 	}
 	
 }

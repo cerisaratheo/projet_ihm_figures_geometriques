@@ -1,6 +1,7 @@
 package modele;
 
 import java.util.*;
+import java.awt.*;
 
 public class DessinModele extends Observable {
 	
@@ -8,6 +9,10 @@ public class DessinModele extends Observable {
 	private FigureColoree figureEnCours;
 	private int nbClic;
 	private Point[] pointsCliques;
+	
+	public FigureColoree getFigureEnCours() {
+		return this.figureEnCours;
+	}
 	
 	public ArrayList<FigureColoree> getLfc() {
 		
@@ -18,11 +23,19 @@ public class DessinModele extends Observable {
 		
 	}
 	
+	public void changeCoul(FigureColoree fc, Color c) {
+		fc.changeCouleur(c);
+		setChanged();
+		notifyObservers();
+	}
+	
 	public void construit(FigureColoree fc) {
 		
 		this.figureEnCours = fc;
 		nbClic = 0;
 		pointsCliques = new Point[fc.nbPoints()];
+		setChanged();
+		notifyObservers();
 	}
 	
 	public void ajoutePoint(int x, int y) {
@@ -31,7 +44,8 @@ public class DessinModele extends Observable {
 		++nbClic;
 		if (nbClic == figureEnCours.nbPoints()) {
 			lfc.add(figureEnCours);
-			
 		}
+		setChanged();
+		notifyObservers();
 	}
 }

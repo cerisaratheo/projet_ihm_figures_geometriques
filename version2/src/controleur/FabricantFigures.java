@@ -10,10 +10,15 @@ public class FabricantFigures implements MouseListener {
 	
 	private DessinModele model;
 
+	public void setModele(DessinModele m) {
+		model = m;
+	}
+
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-
+		
 		model.ajoutePoint(arg0.getX(), arg0.getY());
+		System.out.println("mouseClicked ok");
 	}
 
 	@Override
@@ -43,7 +48,6 @@ public class FabricantFigures implements MouseListener {
 	public FabricantFigures(DessinModele dm) {
 		
 		this.model=dm;
-		
 	}
 
 }

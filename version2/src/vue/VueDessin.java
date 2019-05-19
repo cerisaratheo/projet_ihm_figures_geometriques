@@ -6,20 +6,20 @@ import java.util.*;
 import javax.swing.JPanel;
 
 import modele.DessinModele;
+import modele.FigureColoree;
 
 public class VueDessin extends JPanel implements Observer{
 	
-	private DessinModele dessin;
+	private ArrayList<FigureColoree> lfc;
 
 	public VueDessin() {
-		
-		dessin = new DessinModele();
 		
 	}
 	
 	public void update(Observable obs, Object obj) {
-		
-		
+		DessinModele dm = ((DessinModele)obs);
+		lfc = dm.getLfc();
+		repaint();
 	}
 	
 	public void paintComponent(Graphics g) {

@@ -2,7 +2,7 @@ package modele;
 
 import java.awt.*;
 
-public class Polygone extends FigureColoree {
+public abstract class Polygone extends FigureColoree {
 
 	private Polygon p;
 	
@@ -15,7 +15,7 @@ public class Polygone extends FigureColoree {
 	}
 	
 	public int nbClics() {
-		
+		return 0;
 	}
 	
 	public void modifierPoints(Point[] p) {

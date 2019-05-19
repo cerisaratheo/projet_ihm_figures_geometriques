@@ -7,6 +7,10 @@ public class Quadrilatere extends Polygone {
 	}
 	
 	public int nbClics() {
-		
+		return 0;
+	}
+	
+	public int nbPoints() {
+		return 0;
 	}
 }
