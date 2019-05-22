@@ -68,7 +68,6 @@ public class PanneauChoix extends JPanel {
 				switch(figList.getSelectedIndex ()) {
 				case 1 :
 					dmodele.construit(new Quadrilatere());
-					figList.repaint();
 				break;
 				default:
 					break;
