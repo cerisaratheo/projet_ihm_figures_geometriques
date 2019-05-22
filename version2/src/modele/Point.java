@@ -10,34 +10,35 @@ public class Point {
 	}
 	
 	public double distance(Point p) {
-		return 0;
+		return Math.sqrt((p.rendreX()-this.rendreX())+(p.rendreY()-this.rendreY()));
 	}
 	
 	public int rendreX() {
-		return 0;
+		return x;
 	}
 	
 	public int rendreY() {
-		return 0;
+		return y;
 	}
 	
-	public void incrementerX(int x) {
-		
+	public void incrementerX(int dx) {
+		this.x += dx;
 	}
 	
-	public void incrementerY(int y) {
-		
+	public void incrementerY(int dy) {
+		this.y += dy;
 	}
 	
 	public void modifierX(int x) {
-		
+		this.x = x;
 	}
 	
 	public void modifierY(int y) {
-		
+		this.y = y;
 	}
 	
-	public void translation(int x, int y) {
-		
+	public void translation(int dx, int dy) {
+		this.incrementerX(dx);
+		this.incrementerY(dy);
 	}
 }
