@@ -12,6 +12,7 @@ public abstract class FigureColoree {
 	public FigureColoree() {
 		this.selected = false;
 		this.couleur = Color.BLACK;
+		this.tab_mem = new Point[nbPoints()];
 	}
 	
 	public abstract int nbPoints();
@@ -21,7 +22,10 @@ public abstract class FigureColoree {
 	public abstract void modifierPoints(Point[] p);
 		
 	public void affiche(Graphics g) {
-		
+		//g.setColor(this.couleur);
+		if (this.selected = true) {
+			System.out.println("Les petits carrés devraient s'afficher !");
+		}
 	}
 	
 	public void selectionne() {
