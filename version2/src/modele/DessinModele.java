@@ -63,6 +63,7 @@ public class DessinModele extends Observable {
 		++nbClic;
 		if (nbClic == figureEnCours.nbPoints()) {
 			this.ajoute(figureEnCours);
+			System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHH");
 		}
 		setChanged();
 		notifyObservers();
