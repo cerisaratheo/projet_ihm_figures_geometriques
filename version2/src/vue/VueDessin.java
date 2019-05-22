@@ -21,7 +21,6 @@ public class VueDessin extends JPanel implements Observer{
 		lfc = dm.getLfc();
 		repaint();
 		this.requestFocus();
-		System.out.println("update");
 	}
 	
 	public void paintComponent(Graphics g) {
