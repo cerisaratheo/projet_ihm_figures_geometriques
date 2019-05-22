@@ -93,6 +93,16 @@ public class PanneauChoix extends JPanel {
 		comboBox.add(coulList);
 		add(radioBox, BorderLayout.NORTH);
 		add(comboBox, BorderLayout.SOUTH);
+		
+		if (nouvelleFigure.isSelected()) {
+			
+		}
+		else if (traceMainLeve.isSelected()) {
+			
+		}
+		else if (manip.isSelected()) {
+			
+		}
 	}
 	
 	public Color determineCouleur(int i) {
