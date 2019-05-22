@@ -3,7 +3,7 @@ package modele;
 public class Quadrilatere extends Polygone {
 
 	public Quadrilatere() {
-		super();
+		super();	
 	}
 	
 	public int nbPoints() {
