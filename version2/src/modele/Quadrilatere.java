@@ -11,6 +11,8 @@ public class Quadrilatere extends Polygone {
 	}
 	
 	public FigureColoree recree() {
-		return new Quadrilatere();
+		FigureColoree fc = new Quadrilatere();
+		fc.couleur = this.couleur;
+		return fc;
 	}
 }

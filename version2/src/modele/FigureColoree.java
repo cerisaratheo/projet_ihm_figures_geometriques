@@ -24,9 +24,9 @@ public abstract class FigureColoree {
 	public abstract void modifierPoints(Point[] p);
 		
 	public void affiche(Graphics g) {
-		//g.setColor(this.couleur);
+		g.setColor(this.couleur);
 		if (this.selected = true) {
-			System.out.println("Les petits carrés devraient s'afficher !");
+			System.out.println("Les figures devraient s'afficher !");
 		}
 	}
 	

@@ -28,7 +28,6 @@ public class VueDessin extends JPanel implements Observer{
 		
 		super.paintComponent(g);
 		for (FigureColoree c : lfc) {
-			System.out.println("figure : " +c);
 			c.affiche(g);
 		}
 	}
