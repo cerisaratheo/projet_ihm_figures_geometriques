@@ -9,18 +9,33 @@ public class DessinModele extends Observable {
 	private FigureColoree figureEnCours;
 	private int nbClic;
 	private Point[] pointsCliques;
-	
-	public FigureColoree getFigureEnCours() {
-		return this.figureEnCours;
-	}
-	
-	public ArrayList<FigureColoree> getLfc() {
-		
-		return this.lfc;
-	}
 
 	public DessinModele() {
 		
+	}
+	
+	public int getNbClic() {
+		return nbClic;
+	}
+	
+	public void setNbClic(int i) {
+		nbClic = i;
+	}
+	
+	public FigureColoree getFigureEnCours() {
+		return figureEnCours;
+	}
+	
+	public void setFigureEnCours(FigureColoree fc) {
+		figureEnCours = fc;
+	}
+	
+	public ArrayList<FigureColoree> getLfc() {
+		return this.lfc;
+	}
+	
+	public void setLfc(ArrayList<FigureColoree> p_lfc) {
+		lfc=p_lfc;
 	}
 	
 	public void changeCoul(FigureColoree fc, Color c) {
@@ -38,12 +53,16 @@ public class DessinModele extends Observable {
 		notifyObservers();
 	}
 	
+	public void ajoute(FigureColoree fc) {
+		lfc.add(fc);
+	}
+	
 	public void ajoutePoint(int x, int y) {
 
 		pointsCliques[0] = new Point(x,y);
 		++nbClic;
 		if (nbClic == figureEnCours.nbPoints()) {
-			lfc.add(figureEnCours);
+			this.ajoute(figureEnCours);
 		}
 		setChanged();
 		notifyObservers();
