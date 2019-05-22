@@ -8,10 +8,12 @@ public abstract class Polygone extends FigureColoree {
 	
 	public Polygone() {
 		super();
+		this.p = new Polygon();
 	}
 	
 	public void affiche(Graphics g) {
-		
+		super.affiche(g);
+		g.fillPolygon(this.p);
 	}
 	
 	public int nbClics() {
@@ -19,7 +21,9 @@ public abstract class Polygone extends FigureColoree {
 	}
 	
 	public void modifierPoints(Point[] tab_saisie) {
-		
-		
+		for (int i = 0; i < tab_saisie.length; i++) {
+			p.addPoint(tab_saisie[i].rendreX(), tab_saisie[i].rendreY());
+		}
 	}
+		
 }
