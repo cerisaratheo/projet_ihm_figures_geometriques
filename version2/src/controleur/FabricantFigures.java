@@ -16,9 +16,7 @@ public class FabricantFigures implements MouseListener {
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
-		
-		model.ajoutePoint(arg0.getX(), arg0.getY());
-		System.out.println("mouseClicked ok");
+
 	}
 
 	@Override
@@ -35,8 +33,9 @@ public class FabricantFigures implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		
+		model.ajoutePoint(arg0.getX(), arg0.getY());
+		System.out.println("mouseClicked ok");		
 	}
 
 	@Override
