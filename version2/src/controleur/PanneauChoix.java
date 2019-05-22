@@ -23,6 +23,7 @@ public class PanneauChoix extends JPanel {
 	private JComboBox figList; 
 	private String[] listCoul = { "Choisissez une couleur", "Bleu", "Rouge", "Vert", "Jaune" };
 	private JComboBox coulList;
+	private boolean nf, tml, man;
 
 	public PanneauChoix(DessinModele m) {
 		dmodele=m;
@@ -42,7 +43,9 @@ public class PanneauChoix extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+				nf = true;
+				tml = false;
+				man = false;
 			}
 		});
 		
@@ -50,7 +53,9 @@ public class PanneauChoix extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+				nf = false;
+				tml = true;
+				man = false;
 			}
 		});
 		
@@ -58,7 +63,9 @@ public class PanneauChoix extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				
+				nf = false;
+				tml = false;
+				man = false;
 			}
 		});
 		
@@ -92,16 +99,7 @@ public class PanneauChoix extends JPanel {
 		comboBox.add(coulList);
 		add(radioBox, BorderLayout.NORTH);
 		add(comboBox, BorderLayout.SOUTH);
-		
-		if (nouvelleFigure.isSelected()) {
-			
-		}
-		else if (traceMainLeve.isSelected()) {
-			
-		}
-		else if (manip.isSelected()) {
-			
-		}
+
 	}
 	
 	public Color determineCouleur(int i) {

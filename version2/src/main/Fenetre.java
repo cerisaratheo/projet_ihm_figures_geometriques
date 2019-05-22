@@ -15,7 +15,6 @@ import vue.VueDessin;
 public class Fenetre {
 	
 	private static JPanel principal;
-	private static VueDessin vdessin;
 
 	public static void main(String[] args) {
 		DessinModele mod = new DessinModele();
@@ -27,10 +26,12 @@ public class Fenetre {
 		principal = new JPanel();
 		fenetre.add(pc, BorderLayout.NORTH);
 		fenetre.add(principal, BorderLayout.CENTER);
-		
 		FabricantFigures controleur = new FabricantFigures(mod);
 		VueDessin vd = new VueDessin();
+		fenetre.add(vd);
 		vd.addMouseListener(controleur);
+		vd.requestFocus();
+		mod.addObserver(vd);
 		fenetre.pack();
 		fenetre.setVisible(true);
 	}

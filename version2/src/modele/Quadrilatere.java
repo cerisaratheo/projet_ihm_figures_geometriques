@@ -9,4 +9,8 @@ public class Quadrilatere extends Polygone {
 	public int nbPoints() {
 		return 4;
 	}
+	
+	public FigureColoree recree() {
+		return new Quadrilatere();
+	}
 }

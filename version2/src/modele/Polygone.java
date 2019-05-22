@@ -11,6 +11,7 @@ public abstract class Polygone extends FigureColoree {
 		this.p = new Polygon();
 	}
 	
+	@Override
 	public void affiche(Graphics g) {
 		super.affiche(g);
 		g.fillPolygon(this.p);

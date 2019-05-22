@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class DessinModele extends Observable {
 	
-	private ArrayList<FigureColoree> lfc;
+	private ArrayList<FigureColoree> lfc = new ArrayList<FigureColoree>();
 	private FigureColoree figureEnCours;
 	private int nbClic;
 	private Point[] pointsCliques;
@@ -45,8 +45,7 @@ public class DessinModele extends Observable {
 	}
 	
 	public void construit(FigureColoree fc) {
-		
-		this.figureEnCours = fc;
+		figureEnCours = fc;
 		nbClic = 0;
 		pointsCliques = new Point[fc.nbPoints()];
 		setChanged();
@@ -55,15 +54,20 @@ public class DessinModele extends Observable {
 	
 	public void ajoute(FigureColoree fc) {
 		lfc.add(fc);
+		fc.modifierPoints(pointsCliques);
 	}
 	
 	public void ajoutePoint(int x, int y) {
 
-		pointsCliques[0] = new Point(x,y);
-		++nbClic;
+		if (pointsCliques == null) {
+			return;
+		}
+		
+		pointsCliques[nbClic++] = new Point(x,y);
 		if (nbClic == figureEnCours.nbPoints()) {
 			this.ajoute(figureEnCours);
-			System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHH");
+			figureEnCours = figureEnCours.recree();
+			nbClic = 0;
 		}
 		setChanged();
 		notifyObservers();

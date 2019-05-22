@@ -14,6 +14,8 @@ public abstract class FigureColoree {
 		this.couleur = Color.BLACK;
 		this.tab_mem = new Point[nbPoints()];
 	}
+
+	public abstract FigureColoree recree();
 	
 	public abstract int nbPoints();
 	
