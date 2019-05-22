@@ -15,10 +15,10 @@ public abstract class Polygone extends FigureColoree {
 	}
 	
 	public int nbClics() {
-		return 0;
+		return nbPoints();
 	}
 	
-	public void modifierPoints(Point[] p) {
+	public void modifierPoints(Point[] tab_saisie) {
 		
 		
 	}
