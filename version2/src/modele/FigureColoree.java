@@ -25,9 +25,9 @@ public abstract class FigureColoree {
 		
 	public void affiche(Graphics g) {
 		g.setColor(this.couleur);
-		if (this.selected = true) {
-			System.out.println("Les figures devraient s'afficher !");
-		}
+//		if (this.selected = true) {
+//			System.out.println("Les figures devraient s'afficher !");
+//		}
 	}
 	
 	public void selectionne() {
