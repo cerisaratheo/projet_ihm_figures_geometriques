@@ -64,7 +64,7 @@ public class DessinModele extends Observable {
 		}
 		
 		pointsCliques[nbClic++] = new Point(x,y);
-		if (nbClic == figureEnCours.nbPoints()) {
+		if (nbClic == figureEnCours.nbClics()) {
 			this.ajoute(figureEnCours);
 			figureEnCours = figureEnCours.recree();
 			nbClic = 0;

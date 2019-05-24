@@ -7,7 +7,7 @@ public abstract class FigureColoree {
 	static final private int TAILLE_CARRE_SELECTION = 5;
 	private boolean selected;
 	protected Color couleur;
-	private Point[] tab_mem;
+	protected Point[] tab_mem;
 	
 	public FigureColoree() {
 		this.selected = false;

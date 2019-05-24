@@ -4,7 +4,8 @@ import java.awt.*;
 
 public abstract class Polygone extends FigureColoree {
 
-	private Polygon p;
+	protected Polygon p;
+	
 	
 	public Polygone() {
 		super();
@@ -24,6 +25,7 @@ public abstract class Polygone extends FigureColoree {
 	public void modifierPoints(Point[] tab_saisie) {
 		for (int i = 0; i < tab_saisie.length; i++) {
 			p.addPoint(tab_saisie[i].rendreX(), tab_saisie[i].rendreY());
+			tab_mem = tab_saisie;
 		}
 	}
 		
