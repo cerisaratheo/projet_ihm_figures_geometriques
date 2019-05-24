@@ -5,8 +5,8 @@ import java.awt.Graphics;
 public class Rectangle extends Polygone {
 
 	private int x1, y1, x2, y2, x3, y3;
-	private Point hg, hd, bg;
 	private double L, l;
+	private Point[] tab_mem;
 	
 	public Rectangle() {
 		super();
@@ -37,7 +37,7 @@ public class Rectangle extends Polygone {
 	}
 	
 	public void transfomation(int dx, int dy, int indice) {
-		
+		tab_mem[indice] = new Point(dx, dy);
 	}
 	
 	@Override
