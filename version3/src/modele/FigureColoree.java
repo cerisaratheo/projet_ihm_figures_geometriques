@@ -53,6 +53,9 @@ public abstract class FigureColoree {
 	}
 	
 	public int carreDeSelection(int a, int b) {
+		
+		
+		
 		return 0;
 	}
 }
