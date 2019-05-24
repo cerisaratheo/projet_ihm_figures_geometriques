@@ -22,7 +22,7 @@ public class PanneauChoix extends JPanel {
 
 	private DessinModele dmodele;
 	private JRadioButton nouvelleFigure, traceMainLeve, manip;
-	private String[] listFig = { "choisissez une figure", "quadrilataire", "triangle", "cercle", "rectangle"};
+	private String[] listFig = { "Choisissez une figure", "Quadrilataire", "Triangle", "Cercle", "Rectangle"};
 	private JComboBox figList; 
 	private String[] listCoul = { "Choisissez une couleur", "Bleu", "Rouge", "Vert", "Jaune" };
 	private JComboBox coulList;
