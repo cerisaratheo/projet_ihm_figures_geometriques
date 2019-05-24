@@ -22,7 +22,7 @@ public class PanneauChoix extends JPanel {
 
 	private DessinModele dmodele;
 	private JRadioButton nouvelleFigure, traceMainLeve, manip;
-	private String[] listFig = { "choisissez une figure", "quadrilataire", "triangle", "cercle"};
+	private String[] listFig = { "choisissez une figure", "quadrilataire", "triangle", "cercle", "rectangle"};
 	private JComboBox figList; 
 	private String[] listCoul = { "Choisissez une couleur", "Bleu", "Rouge", "Vert", "Jaune" };
 	private JComboBox coulList;
@@ -72,6 +72,7 @@ public class PanneauChoix extends JPanel {
 			}
 		});
 
+<<<<<<< HEAD
 		//while (nf && !tml && !man) {
 			figList.addActionListener(new ActionListener () {
 				public void actionPerformed(ActionEvent e) {
@@ -89,6 +90,26 @@ public class PanneauChoix extends JPanel {
 					default:
 						break;
 					}
+=======
+		figList.addActionListener(new ActionListener () {
+			public void actionPerformed(ActionEvent e) {
+				if (dmodele==null) return;
+				switch(figList.getSelectedIndex ()) {
+				case 1 :
+					dmodele.construit(new Quadrilatere());
+					break;
+				case 2 :
+					dmodele.construit(new Triangle());
+					break;
+				case 3 :
+					dmodele.construit(new Cercle());
+					break;
+				case 4 :
+					dmodele.construit(new Rectangle());
+					break;
+				default:
+					break;
+>>>>>>> c0735905a184e4137271568c3fdc12c4f8420bd3
 				}
 			});
 		//}
