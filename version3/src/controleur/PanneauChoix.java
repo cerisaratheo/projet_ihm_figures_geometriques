@@ -72,25 +72,6 @@ public class PanneauChoix extends JPanel {
 			}
 		});
 
-<<<<<<< HEAD
-		//while (nf && !tml && !man) {
-			figList.addActionListener(new ActionListener () {
-				public void actionPerformed(ActionEvent e) {
-					if (dmodele==null) return;
-					switch(figList.getSelectedIndex ()) {
-					case 1 :
-						dmodele.construit(new Quadrilatere());
-						break;
-					case 2 :
-						dmodele.construit(new Triangle());
-						break;
-					case 3 :
-						dmodele.construit(new Cercle());
-						break;
-					default:
-						break;
-					}
-=======
 		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
 				if (dmodele==null) return;
@@ -109,10 +90,9 @@ public class PanneauChoix extends JPanel {
 					break;
 				default:
 					break;
->>>>>>> c0735905a184e4137271568c3fdc12c4f8420bd3
 				}
-			});
-		//}
+			}
+		});
 
 		coulList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
