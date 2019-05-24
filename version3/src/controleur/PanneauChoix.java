@@ -46,9 +46,12 @@ public class PanneauChoix extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				nf = true;
-				tml = false;
-				man = false;
+				if (nouvelleFigure.isSelected()) {
+					nf = true;
+					tml = false;
+					man = false;
+					System.out.println("nouvelleFigure selectionné");
+				}
 			}
 		});
 
@@ -56,9 +59,12 @@ public class PanneauChoix extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				nf = false;
-				tml = true;
-				man = false;
+				if (traceMainLeve.isSelected()) {
+					nf = false;
+					tml = true;
+					man = false;
+					System.out.println("traceMainLevee selectionné");
+				}
 			}
 		});
 
@@ -66,12 +72,14 @@ public class PanneauChoix extends JPanel {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				nf = false;
-				tml = false;
-				man = false;
+				if (manip.isSelected()) {
+					nf = false;
+					tml = false;
+					man = true;
+					System.out.println("manip selectionné");
+				}
 			}
 		});
-
 
 		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
