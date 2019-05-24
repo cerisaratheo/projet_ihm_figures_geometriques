@@ -72,7 +72,7 @@ public class PanneauChoix extends JPanel {
 			}
 		});
 
-		
+
 		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
 				if (dmodele==null) return;
