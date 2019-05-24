@@ -72,24 +72,26 @@ public class PanneauChoix extends JPanel {
 			}
 		});
 
-		figList.addActionListener(new ActionListener () {
-			public void actionPerformed(ActionEvent e) {
-				if (dmodele==null) return;
-				switch(figList.getSelectedIndex ()) {
-				case 1 :
-					dmodele.construit(new Quadrilatere());
-					break;
-				case 2 :
-					dmodele.construit(new Triangle());
-					break;
-				case 3 :
-					dmodele.construit(new Cercle());
-					break;
-				default:
-					break;
+		//while (nf && !tml && !man) {
+			figList.addActionListener(new ActionListener () {
+				public void actionPerformed(ActionEvent e) {
+					if (dmodele==null) return;
+					switch(figList.getSelectedIndex ()) {
+					case 1 :
+						dmodele.construit(new Quadrilatere());
+						break;
+					case 2 :
+						dmodele.construit(new Triangle());
+						break;
+					case 3 :
+						dmodele.construit(new Cercle());
+						break;
+					default:
+						break;
+					}
 				}
-			}
-		});
+			});
+		//}
 
 		coulList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
