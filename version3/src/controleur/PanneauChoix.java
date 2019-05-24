@@ -48,8 +48,8 @@ public class PanneauChoix extends JPanel {
 					nf = true;
 					tml = false;
 					man = false;
-					System.out.println("nouvelle figure : " +nf);
-					System.out.println("trace main levee : " +tml);
+					System.out.println("nouvelle figure : " + nf);
+					System.out.println("trace main levee : " + tml);
 					System.out.println("manip : " + man);
 				}
 			}
@@ -62,8 +62,8 @@ public class PanneauChoix extends JPanel {
 					nf = false;
 					tml = true;
 					man = false;
-					System.out.println("nouvelle figure : " +nf);
-					System.out.println("trace main levee : " +tml);
+					System.out.println("nouvelle figure : " + nf);
+					System.out.println("trace main levee : " + tml);
 					System.out.println("manip : " + man);
 				}
 			}
@@ -86,23 +86,19 @@ public class PanneauChoix extends JPanel {
 		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
 				if (dmodele==null) return;
-<<<<<<< HEAD
 				switch(figList.getSelectedIndex ()) {
 				case 1 :
-					dmodele.construit(new Quadrilatere());
+					dmodele.construit(creerFigure());
 					break;
 				case 2 :
-					dmodele.construit(new Triangle());
+					dmodele.construit(creerFigure());
 					break;
 				case 3 :
-					dmodele.construit(new Rectangle());
+					dmodele.construit(creerFigure());
 					break;
 				default:
 					break;
 				}
-=======
-				dmodele.construit(creerFigure());
->>>>>>> 235ec506c4a02480bd4058d9b18ef684172221e7
 			}
 		});
 
@@ -132,8 +128,6 @@ public class PanneauChoix extends JPanel {
 		case 2 :
 			return new Triangle();
 		case 3 :
-			return new Cercle();
-		case 4 :
 			return new Rectangle();
 		default:
 			return null;
