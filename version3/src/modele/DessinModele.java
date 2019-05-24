@@ -28,6 +28,7 @@ public class DessinModele extends Observable {
 	
 	public void setFigureEnCours(FigureColoree fc) {
 		figureEnCours = fc;
+		nbClic = 0;
 	}
 	
 	public ArrayList<FigureColoree> getLfc() {
@@ -59,7 +60,7 @@ public class DessinModele extends Observable {
 	
 	public void ajoutePoint(int x, int y) {
 
-		if (pointsCliques == null) {
+		if (pointsCliques == null || figureEnCours == null) {
 			return;
 		}
 		
