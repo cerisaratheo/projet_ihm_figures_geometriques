@@ -38,4 +38,21 @@ public abstract class FigureColoree {
 	public void changeCouleur(Color c) {
 		this.couleur = c;
 	}
+	
+	public abstract boolean estDedans(int x, int y);
+	
+	public void translation(int dx, int dy) {
+		for (int i = 0; i < tab_mem.length; i++) {
+			tab_mem[i].translation(dx, dy);
+		}
+	}
+	
+	public void transformation(int dx, int dy, int indice) {
+		tab_mem[indice].modifierX(dx);
+		tab_mem[indice].modifierY(dy);
+	}
+	
+	public int carreDeSelection(int a, int b) {
+		return 0;
+	}
 }
