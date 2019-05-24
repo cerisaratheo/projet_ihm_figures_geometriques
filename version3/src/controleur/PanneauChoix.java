@@ -42,40 +42,43 @@ public class PanneauChoix extends JPanel {
 		coulList.setSelectedIndex(0);
 
 		nouvelleFigure.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (nouvelleFigure.isSelected()) {
 					nf = true;
 					tml = false;
 					man = false;
-					System.out.println("nouvelleFigure selectionné");
+					System.out.println("nouvelle figure : " +nf);
+					System.out.println("trace main levee : " +tml);
+					System.out.println("manip : " + man);
 				}
 			}
 		});
 
 		traceMainLeve.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (traceMainLeve.isSelected()) {
 					nf = false;
 					tml = true;
 					man = false;
-					System.out.println("traceMainLevee selectionné");
+					System.out.println("nouvelle figure : " +nf);
+					System.out.println("trace main levee : " +tml);
+					System.out.println("manip : " + man);
 				}
 			}
 		});
 
 		manip.addActionListener(new ActionListener() {
-
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (manip.isSelected()) {
 					nf = false;
 					tml = false;
 					man = true;
-					System.out.println("manip selectionné");
+					System.out.println("nouvelle figure : " + nf);
+					System.out.println("trace main levee : " + tml);
+					System.out.println("manip : " + man);
 				}
 			}
 		});
@@ -83,6 +86,7 @@ public class PanneauChoix extends JPanel {
 		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
 				if (dmodele==null) return;
+<<<<<<< HEAD
 				switch(figList.getSelectedIndex ()) {
 				case 1 :
 					dmodele.construit(new Quadrilatere());
@@ -96,6 +100,9 @@ public class PanneauChoix extends JPanel {
 				default:
 					break;
 				}
+=======
+				dmodele.construit(creerFigure());
+>>>>>>> 235ec506c4a02480bd4058d9b18ef684172221e7
 			}
 		});
 
@@ -116,7 +123,21 @@ public class PanneauChoix extends JPanel {
 		comboBox.add(coulList);
 		add(radioBox, BorderLayout.NORTH);
 		add(comboBox, BorderLayout.SOUTH);
+	}
 
+	public FigureColoree creerFigure() {
+		switch(figList.getSelectedIndex ()) {
+		case 1 :
+			return new Quadrilatere();
+		case 2 :
+			return new Triangle();
+		case 3 :
+			return new Cercle();
+		case 4 :
+			return new Rectangle();
+		default:
+			return null;
+		}		
 	}
 
 	public Color determineCouleur(int i) {
