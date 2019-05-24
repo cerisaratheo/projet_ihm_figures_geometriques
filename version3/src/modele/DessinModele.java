@@ -9,6 +9,7 @@ public class DessinModele extends Observable {
 	private FigureColoree figureEnCours;
 	private int nbClic;
 	private Point[] pointsCliques;
+	private Color lastCoul = Color.BLACK;
 
 	public DessinModele() {
 		
@@ -40,6 +41,8 @@ public class DessinModele extends Observable {
 	}
 	
 	public void changeCoul(FigureColoree fc, Color c) {
+		lastCoul = c;
+		if (fc == null) return;
 		fc.changeCouleur(c);
 		setChanged();
 		notifyObservers();
@@ -49,6 +52,7 @@ public class DessinModele extends Observable {
 		figureEnCours = fc;
 		nbClic = 0;
 		pointsCliques = new Point[fc.nbPoints()];
+		fc.changeCouleur(lastCoul);
 		setChanged();
 		notifyObservers();
 	}
