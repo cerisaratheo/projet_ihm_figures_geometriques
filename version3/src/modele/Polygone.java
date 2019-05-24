@@ -28,5 +28,20 @@ public abstract class Polygone extends FigureColoree {
 			tab_mem = tab_saisie;
 		}
 	}
+	
+	public boolean estDedans(int x, int y) {
+		boolean res = false;
+		int[] xpoint = new int[nbPoints()];
+		int[] ypoint = new int[nbPoints()];
+		for (int i = 0; i < tab_mem.length; i++) {
+			xpoint[i] = tab_mem[i].rendreX();
+			ypoint[i] = tab_mem[i].rendreY();
+		}
+		Polygon pol = new Polygon(xpoint, ypoint, nbPoints());
+		if (pol.contains(x, y)) {
+			res = true;
+		}
+		return res;
+	}
 		
 }

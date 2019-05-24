@@ -126,20 +126,25 @@ public class PanneauChoix extends JPanel {
 	}
 
 	public Color determineCouleur(int i) {
+		Color c = null;
 		switch(i) {
-		case 0:
-			return Color.BLACK;
 		case 1 :
-			return Color.BLUE;
+			c = Color.BLUE;
+			break;
 		case 2:
-			return Color.RED;
+			c = Color.RED;
+			break;
 		case 3:
-			return Color.GREEN;
+			c = Color.GREEN;
+			break;
 		case 4:
-			return Color.YELLOW;
+			c = Color.YELLOW;
+			break;
 		default:
-			return Color.WHITE;
+			c = Color.BLACK;
+			break;
 		}
+		return c;
 	}
 
 }
