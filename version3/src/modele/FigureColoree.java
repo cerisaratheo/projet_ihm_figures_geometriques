@@ -52,10 +52,22 @@ public abstract class FigureColoree {
 		tab_mem[indice].modifierY(dy);
 	}
 	
-	public int carreDeSelection(int a, int b) {
+	public int carreDeSelection(int x, int y) {
+		int i = 0;
+		int res = -1;
 		
+		boolean arret = false;
 		
-		
-		return 0;
+		while (!arret && i < tab_mem.length) {
+			if ((x >= (tab_mem[i].rendreX() - TAILLE_CARRE_SELECTION)) && (x <= (tab_mem[i].rendreX() + TAILLE_CARRE_SELECTION)) 
+				&& (y >= (tab_mem[i].rendreY()-TAILLE_CARRE_SELECTION)) && (y <= (tab_mem[i].rendreY()+TAILLE_CARRE_SELECTION))) {
+				res = i;
+				arret = true;
+			}
+			else {
+				i++;
+			}
+		}
+		return res;
 	}
 }

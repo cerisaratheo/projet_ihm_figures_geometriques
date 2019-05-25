@@ -130,6 +130,7 @@ public class PanneauChoix extends JPanel {
 			return new Quadrilatere();
 		case 2 :
 			return new Triangle();
+			
 		case 3 :
 			return new Rectangle();
 		default:
