@@ -15,6 +15,8 @@ public abstract class FigureColoree {
 		this.tab_mem = new Point[nbPoints()];
 	}
 
+	public abstract boolean estDedans(int x, int y);
+
 	public abstract FigureColoree recree();
 	
 	public abstract int nbPoints();
@@ -22,7 +24,7 @@ public abstract class FigureColoree {
 	public abstract int nbClics();
 	
 	public abstract void modifierPoints(Point[] p);
-		
+			
 	public void affiche(Graphics g) {
 		g.setColor(this.couleur);
 	}
@@ -38,9 +40,7 @@ public abstract class FigureColoree {
 	public void changeCouleur(Color c) {
 		this.couleur = c;
 	}
-	
-	public abstract boolean estDedans(int x, int y);
-	
+		
 	public void translation(int dx, int dy) {
 		for (int i = 0; i < tab_mem.length; i++) {
 			tab_mem[i].translation(dx, dy);
