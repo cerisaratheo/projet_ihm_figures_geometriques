@@ -86,7 +86,6 @@ public class PanneauChoix extends JPanel {
 		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
 				if (dmodele==null) return;
-<<<<<<< HEAD
 				switch(figList.getSelectedIndex ()) {
 				case 1 :
 					dmodele.construit(new Quadrilatere());
@@ -100,9 +99,6 @@ public class PanneauChoix extends JPanel {
 				default:
 					break;
 				}
-=======
-				dmodele.construit(creerFigure());
->>>>>>> 235ec506c4a02480bd4058d9b18ef684172221e7
 			}
 		});
 
@@ -131,9 +127,8 @@ public class PanneauChoix extends JPanel {
 			return new Quadrilatere();
 		case 2 :
 			return new Triangle();
+			
 		case 3 :
-			return new Cercle();
-		case 4 :
 			return new Rectangle();
 		default:
 			return null;
