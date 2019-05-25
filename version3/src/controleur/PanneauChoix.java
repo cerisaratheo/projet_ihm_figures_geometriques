@@ -48,8 +48,8 @@ public class PanneauChoix extends JPanel {
 					nf = true;
 					tml = false;
 					man = false;
-					System.out.println("nouvelle figure : " +nf);
-					System.out.println("trace main levee : " +tml);
+					System.out.println("nouvelle figure : " + nf);
+					System.out.println("trace main levee : " + tml);
 					System.out.println("manip : " + man);
 				}
 			}
@@ -62,8 +62,9 @@ public class PanneauChoix extends JPanel {
 					nf = false;
 					tml = true;
 					man = false;
-					System.out.println("nouvelle figure : " +nf);
-					System.out.println("trace main levee : " +tml);
+					dmodele.setFigureEnCours(null);
+					System.out.println("nouvelle figure : " + nf);
+					System.out.println("trace main levee : " + tml);
 					System.out.println("manip : " + man);
 				}
 			}
@@ -76,6 +77,7 @@ public class PanneauChoix extends JPanel {
 					nf = false;
 					tml = false;
 					man = true;
+					dmodele.setFigureEnCours(null);
 					System.out.println("nouvelle figure : " + nf);
 					System.out.println("trace main levee : " + tml);
 					System.out.println("manip : " + man);
@@ -86,15 +88,16 @@ public class PanneauChoix extends JPanel {
 		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
 				if (dmodele==null) return;
+				if (!nf) return;
 				switch(figList.getSelectedIndex ()) {
 				case 1 :
-					dmodele.construit(new Quadrilatere());
+					dmodele.construit(creerFigure());
 					break;
 				case 2 :
-					dmodele.construit(new Triangle());
+					dmodele.construit(creerFigure());
 					break;
 				case 3 :
-					dmodele.construit(new Rectangle());
+					dmodele.construit(creerFigure());
 					break;
 				default:
 					break;
