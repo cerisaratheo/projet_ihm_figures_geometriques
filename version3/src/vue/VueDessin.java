@@ -5,12 +5,14 @@ import java.util.*;
 
 import javax.swing.JPanel;
 
+import controleur.ManipulateurFormes;
 import modele.DessinModele;
 import modele.FigureColoree;
 
 public class VueDessin extends JPanel implements Observer{
 	
 	private ArrayList<FigureColoree> lfc;
+	private ManipulateurFormes mf;
 
 	public VueDessin() {
 		lfc = new ArrayList<FigureColoree>();

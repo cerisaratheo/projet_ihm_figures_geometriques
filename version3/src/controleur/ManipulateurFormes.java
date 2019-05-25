@@ -3,6 +3,7 @@ package controleur;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
 
 import modele.DessinModele;
 import modele.FigureColoree;
@@ -11,6 +12,8 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	private int last_x, last_y, indice, nbf, sel;
 	private boolean trans;
+	private ArrayList<FigureColoree> lfc;
+	private DessinModele dm;
 	
 	public ManipulateurFormes(DessinModele dm) {
 		
@@ -59,7 +62,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 	}
 	
 	public int nbFigures() {
-		
+		return lfc.size();
 	}
 	
 	public FigureColoree figureSelection() {
