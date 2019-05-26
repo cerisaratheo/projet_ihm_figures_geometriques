@@ -76,7 +76,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 	}
 	
 	public FigureColoree figureSelection() {
-		return null;
+		return v_dm.getFigureEnCours();
 	}
 	
 	public void selectionProchaineFigure() {
