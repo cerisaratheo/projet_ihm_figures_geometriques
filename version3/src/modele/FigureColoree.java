@@ -26,7 +26,19 @@ public abstract class FigureColoree {
 	public abstract void modifierPoints(Point[] p);
 			
 	public void affiche(Graphics g) {
-		g.setColor(this.couleur);
+		if (selected == true) {
+			g.setColor(Color.black);
+			for (int i = 0; i < tab_mem.length; i++) {
+				g.fillRect(tab_mem[i].rendreX() - TAILLE_CARRE_SELECTION / 2, tab_mem[i].rendreY() - TAILLE_CARRE_SELECTION / 2, TAILLE_CARRE_SELECTION, TAILLE_CARRE_SELECTION);
+			}
+			g.setColor(couleur);
+		}
+		if (selected == false) {
+			for (int i = 0; i < tab_mem.length; i++) {
+				g.clearRect(tab_mem[i - 1].rendreX() - TAILLE_CARRE_SELECTION / 2, tab_mem[i - 1].rendreY() - TAILLE_CARRE_SELECTION / 2, TAILLE_CARRE_SELECTION, TAILLE_CARRE_SELECTION);
+			}
+			g.setColor(couleur);
+		}
 	}
 	
 	public void selectionne() {
