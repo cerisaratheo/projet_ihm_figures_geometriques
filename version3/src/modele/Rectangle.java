@@ -30,9 +30,8 @@ public class Rectangle extends Quadrilatere {
 	}
 	
 	public void transfomation(int dx, int dy, int indice) {
-//		tab_mem[indice] = new Point(dx, dy);
-//		tab_mem[indice].modifierX(dx);
-//		tab_mem[indice].modifierY(dy);
+		tab_mem[indice].modifierX(dx);
+		tab_mem[indice].modifierY(dy);
 	}
 
 }
