@@ -61,8 +61,9 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		// TODO Auto-generated method stub
-		
+
+		FigureColoree fc = figureSelection();
+		fc.translation(arg0.getX(), arg0.getY());
 	}
 
 	@Override
