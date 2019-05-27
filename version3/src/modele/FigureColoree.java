@@ -39,6 +39,7 @@ public abstract class FigureColoree {
 			}
 			g.setColor(couleur);
 		}
+
 	}
 	
 	public void selectionne() {
