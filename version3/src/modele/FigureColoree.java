@@ -26,13 +26,15 @@ public abstract class FigureColoree {
 	public abstract void modifierPoints(Point[] p);
 			
 	public void affiche(Graphics g) {
+		g.setColor(couleur);
+		Color save = couleur;
 		if (selected) {
 			for (int i = 0; i < tab_mem.length; i++) {
 				int x = tab_mem[i].rendreX();
 				int y = tab_mem[i].rendreY();
 				g.fillRect(x - TAILLE_CARRE_SELECTION, y - TAILLE_CARRE_SELECTION, TAILLE_CARRE_SELECTION * 2, TAILLE_CARRE_SELECTION * 2);
 			}
-			g.setColor(couleur);
+			g.setColor(save);
 		}
 	}
 	
