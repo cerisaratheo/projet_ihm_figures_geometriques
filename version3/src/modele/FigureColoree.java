@@ -28,9 +28,19 @@ public abstract class FigureColoree {
 	public void affiche(Graphics g) {
 		if (selected) {
 			for (int i = 0; i < tab_mem.length; i++) {
+<<<<<<< HEAD
 				int x = tab_mem[i].rendreX();
 				int y = tab_mem[i].rendreY();
 				g.fillRect(x - TAILLE_CARRE_SELECTION, y - TAILLE_CARRE_SELECTION, TAILLE_CARRE_SELECTION * 2, TAILLE_CARRE_SELECTION * 2);
+=======
+				g.fillRect(tab_mem[i].rendreX() - TAILLE_CARRE_SELECTION / 2, tab_mem[i].rendreY() - TAILLE_CARRE_SELECTION / 2, TAILLE_CARRE_SELECTION, TAILLE_CARRE_SELECTION);
+			}
+			g.setColor(couleur);
+		}
+		else {
+			for (int i = 0; i < tab_mem.length; i++) {
+				g.clearRect(tab_mem[i - 1].rendreX() - TAILLE_CARRE_SELECTION / 2, tab_mem[i - 1].rendreY() - TAILLE_CARRE_SELECTION / 2, TAILLE_CARRE_SELECTION, TAILLE_CARRE_SELECTION);
+>>>>>>> 4fe309b8763d404a4442548056883e55faf2f770
 			}
 			g.setColor(couleur);
 		}

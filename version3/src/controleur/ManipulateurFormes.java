@@ -47,6 +47,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 			if (lfc.get(i).estDedans(last_x, last_y)) {
 				trans = true;
 				v_dm.setFigureEnCours(lfc.get(i));
+				lfc.get(i).selectionne();
 				sel = i;
 				return;
 			}
