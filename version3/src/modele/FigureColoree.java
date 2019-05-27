@@ -33,13 +33,12 @@ public abstract class FigureColoree {
 			}
 			g.setColor(couleur);
 		}
-		if (selected == false) {
+		else {
 			for (int i = 0; i < tab_mem.length; i++) {
 				g.clearRect(tab_mem[i - 1].rendreX() - TAILLE_CARRE_SELECTION / 2, tab_mem[i - 1].rendreY() - TAILLE_CARRE_SELECTION / 2, TAILLE_CARRE_SELECTION, TAILLE_CARRE_SELECTION);
 			}
 			g.setColor(couleur);
 		}
-
 	}
 	
 	public void selectionne() {
