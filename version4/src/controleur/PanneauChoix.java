@@ -72,6 +72,7 @@ public class PanneauChoix extends JPanel {
 					nf = false;
 					tml = true;
 					man = false;
+					vdessin.passerModeDessin();
 					dmodele.setFigureEnCours(null);
 					figList.setEnabled(false);
 					coulList.setEnabled(true);
@@ -109,6 +110,7 @@ public class PanneauChoix extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (dmodele==null) return;
 				dmodele.changeCoul(dmodele.getFigureEnCours(), determineCouleur(coulList.getSelectedIndex()));
+				vdessin.trace(determineCouleur(coulList.getSelectedIndex()));
 			}
 		});
 
