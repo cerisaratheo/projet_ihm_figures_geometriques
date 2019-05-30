@@ -22,7 +22,9 @@ public abstract class Polygone extends FigureColoree {
 		return nbPoints();
 	}
 	
+	@Override
 	public void modifierPoints(Point[] tab_saisie) {
+		p.reset();
 		for (int i = 0; i < tab_saisie.length; i++) {
 			p.addPoint(tab_saisie[i].rendreX(), tab_saisie[i].rendreY());
 			tab_mem = tab_saisie;
@@ -34,6 +36,7 @@ public abstract class Polygone extends FigureColoree {
 		int[] xpoint = new int[nbPoints()];
 		int[] ypoint = new int[nbPoints()];
 		for (int i = 0; i < tab_mem.length; i++) {
+			System.out.println("estDedans polygone "+ tab_mem.length+" "+xpoint.length+" "+nbPoints());
 			xpoint[i] = tab_mem[i].rendreX();
 			ypoint[i] = tab_mem[i].rendreY();
 		}

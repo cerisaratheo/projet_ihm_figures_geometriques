@@ -7,20 +7,14 @@ public class DessinModele extends Observable {
 	
 	private ArrayList<FigureColoree> lfc = new ArrayList<FigureColoree>();
 	private FigureColoree figureEnCours;
-	private int nbClic;
-	private Point[] pointsCliques;
 	private Color lastCoul = Color.BLACK;
 
 	public DessinModele() {
-		
 	}
 	
-	public int getNbClic() {
-		return nbClic;
-	}
-	
-	public void setNbClic(int i) {
-		nbClic = i;
+	public void modeleChange() {
+		setChanged();
+		notifyObservers();
 	}
 	
 	public FigureColoree getFigureEnCours() {
@@ -29,7 +23,6 @@ public class DessinModele extends Observable {
 	
 	public void setFigureEnCours(FigureColoree fc) {
 		figureEnCours = fc;
-		nbClic = 0;
 	}
 	
 	public ArrayList<FigureColoree> getLfc() {
@@ -50,8 +43,6 @@ public class DessinModele extends Observable {
 	
 	public void construit(FigureColoree fc) {
 		figureEnCours = fc;
-		nbClic = 0;
-		pointsCliques = new Point[fc.nbPoints()];
 		fc.changeCouleur(lastCoul);
 		setChanged();
 		notifyObservers();
@@ -59,22 +50,7 @@ public class DessinModele extends Observable {
 	
 	public void ajoute(FigureColoree fc) {
 		lfc.add(fc);
-		fc.modifierPoints(pointsCliques);
+		modeleChange();
 	}
 	
-	public void ajoutePoint(int x, int y) {
-
-		if (pointsCliques == null || figureEnCours == null) {
-			return;
-		}
-		
-		pointsCliques[nbClic++] = new Point(x,y);
-		if (nbClic == figureEnCours.nbClics()) {
-			this.ajoute(figureEnCours);
-			figureEnCours = figureEnCours.recree();
-			nbClic = 0;
-		}
-		setChanged();
-		notifyObservers();
-	}
 }

@@ -26,8 +26,10 @@ public class PanneauChoix extends JPanel {
 	private String[] listCoul = { "Choisissez une couleur", "Bleu", "Rouge", "Vert", "Jaune" };
 	private JComboBox coulList;
 	private boolean nf, tml, man;
+	private VueDessin vdessin;
 
-	public PanneauChoix(DessinModele m) {
+	public PanneauChoix(DessinModele m, VueDessin vd) {
+		vdessin = vd;
 		dmodele=m;
 		ButtonGroup bg = new ButtonGroup();
 		nouvelleFigure = new JRadioButton("Nouvelle Figure");
@@ -38,6 +40,7 @@ public class PanneauChoix extends JPanel {
 		bg.add(manip);
 		figList = new JComboBox(listFig);
 		figList.setSelectedIndex(0);
+		figList.setEnabled(false);
 		coulList = new JComboBox(listCoul);
 		coulList.setSelectedIndex(0);
 
@@ -45,12 +48,16 @@ public class PanneauChoix extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (nouvelleFigure.isSelected()) {
+					for (FigureColoree f: dmodele.getLfc()) {
+						f.deSelectionne();
+					}
 					nf = true;
 					tml = false;
 					man = false;
-					System.out.println("nouvelle figure : " + nf);
-					System.out.println("trace main levee : " + tml);
-					System.out.println("manip : " + man);
+					figList.setEnabled(true);
+					coulList.setEnabled(true);
+					repaint();
+					if (!setFigureModele()) return;
 				}
 			}
 		});
@@ -59,13 +66,16 @@ public class PanneauChoix extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (traceMainLeve.isSelected()) {
+					for (FigureColoree f: dmodele.getLfc()) {
+						f.deSelectionne();
+					}
 					nf = false;
 					tml = true;
 					man = false;
 					dmodele.setFigureEnCours(null);
-					System.out.println("nouvelle figure : " + nf);
-					System.out.println("trace main levee : " + tml);
-					System.out.println("manip : " + man);
+					figList.setEnabled(false);
+					coulList.setEnabled(true);
+					repaint();
 				}
 			}
 		});
@@ -74,34 +84,24 @@ public class PanneauChoix extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (manip.isSelected()) {
+					for (FigureColoree f: dmodele.getLfc()) {
+						f.deSelectionne();
+					}
 					nf = false;
 					tml = false;
 					man = true;
 					dmodele.setFigureEnCours(null);
-					System.out.println("nouvelle figure : " + nf);
-					System.out.println("trace main levee : " + tml);
-					System.out.println("manip : " + man);
+					vdessin.passerModeManip();
+					figList.setEnabled(false);
+					coulList.setEnabled(true);
+					repaint();
 				}
 			}
 		});
 
 		figList.addActionListener(new ActionListener () {
 			public void actionPerformed(ActionEvent e) {
-				if (dmodele==null) return;
-				if (!nf) return;
-				switch(figList.getSelectedIndex ()) {
-				case 1 :
-					dmodele.construit(creerFigure());
-					break;
-				case 2 :
-					dmodele.construit(creerFigure());
-					break;
-				case 3 :
-					dmodele.construit(creerFigure());
-					break;
-				default:
-					break;
-				}
+				setFigureModele();
 			}
 		});
 
@@ -124,13 +124,22 @@ public class PanneauChoix extends JPanel {
 		add(comboBox, BorderLayout.SOUTH);
 	}
 
+	private boolean setFigureModele() {
+		if (dmodele==null) return false;
+		if (!nf) return false;
+		FigureColoree f = creerFigure();
+		if (f==null) return false;
+		dmodele.construit(f);
+		vdessin.passerModeCreation(f);
+		return true;
+	}
+	
 	public FigureColoree creerFigure() {
 		switch(figList.getSelectedIndex ()) {
 		case 1 :
 			return new Quadrilatere();
 		case 2 :
 			return new Triangle();
-			
 		case 3 :
 			return new Rectangle();
 		default:

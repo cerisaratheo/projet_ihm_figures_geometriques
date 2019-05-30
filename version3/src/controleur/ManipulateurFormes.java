@@ -18,7 +18,6 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 	public ManipulateurFormes(DessinModele p_dm) {
 		v_dm = p_dm;
 		lfc = p_dm.getLfc();
-		nbf = lfc.size();
 	}
 
 	@Override
@@ -41,30 +40,39 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
+		for (FigureColoree f: lfc) {
+			f.deSelectionne();
+		}
 		last_x = arg0.getX();
 		last_y = arg0.getY();
+		nbf = lfc.size();
+		System.out.println("manipmoise "+nbf);
 		for (int i=0; i<nbf; i++) {
 			if (lfc.get(i).estDedans(last_x, last_y)) {
 				trans = true;
 				v_dm.setFigureEnCours(lfc.get(i));
 				lfc.get(i).selectionne();
 				sel = i;
+				v_dm.modeleChange();
 				return;
 			}
 		}
+		v_dm.modeleChange();		
 	}
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-
-		FigureColoree fc = figureSelection();
-		fc.translation(arg0.getX(), arg0.getY());
+		System.out.println("trans");
+		FigureColoree fc = v_dm.getFigureEnCours();
+		fc.translation(arg0.getX()-last_x, arg0.getY()-last_y);
+		last_x=arg0.getX();
+		last_y=arg0.getY();
+		v_dm.modeleChange();
 	}
 
 	@Override
@@ -75,10 +83,6 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 	
 	public int nbFigures() {
 		return nbf;
-	}
-	
-	public FigureColoree figureSelection() {
-		return v_dm.getFigureEnCours();
 	}
 	
 	public void selectionProchaineFigure() {

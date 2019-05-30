@@ -5,7 +5,7 @@ import java.awt.*;
 public abstract class FigureColoree {
 
 	static final private int TAILLE_CARRE_SELECTION = 5;
-	private boolean selected;
+	protected boolean selected;
 	protected Color couleur;
 	protected Point[] tab_mem;
 	
@@ -54,6 +54,7 @@ public abstract class FigureColoree {
 		for (int i = 0; i < tab_mem.length; i++) {
 			tab_mem[i].translation(dx, dy);
 		}
+		this.modifierPoints(tab_mem);
 	}
 	
 	public void transformation(int dx, int dy, int indice) {
