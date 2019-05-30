@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import modele.DessinModele;
 import modele.FigureColoree;
+import vue.VueDessin;
 
 public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
@@ -15,9 +16,11 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 	private ArrayList<FigureColoree> lfc;
 	private DessinModele model;
 	private int carreSelectionne = -1;
+	private VueDessin vd;
 
-	public ManipulateurFormes(DessinModele p_dm) {
+	public ManipulateurFormes(DessinModele p_dm, VueDessin p_vd) {
 		model = p_dm;
+		vd = p_vd;
 		lfc = p_dm.getLfc();
 	}
 
@@ -72,6 +75,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 		// clic a cote : deselectionner la figure
 		figureSel=-1;
 		model.modeleChange();
+		
 	}
 
 	@Override

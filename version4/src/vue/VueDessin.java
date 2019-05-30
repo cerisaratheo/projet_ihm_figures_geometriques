@@ -30,7 +30,7 @@ public class VueDessin extends JPanel implements Observer{
 		lfc = dessin.getLfc();
 		repaint();
 		this.requestFocus();
-		if (mf==null) mf = new ManipulateurFormes(dessin);
+		if (mf==null) mf = new ManipulateurFormes(dessin, this);
 		if (ff==null) ff = new FabricantFigures(dessin);
 	}
 	
