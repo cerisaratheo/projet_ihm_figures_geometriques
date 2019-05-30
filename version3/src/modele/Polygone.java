@@ -23,11 +23,11 @@ public abstract class Polygone extends FigureColoree {
 	}
 	
 	@Override
-	public void modifierPoints(Point[] tab_saisie) {
+	public void modifierPoints(Point[] tab_pts) {
 		p.reset();
-		for (int i = 0; i < tab_saisie.length; i++) {
-			p.addPoint(tab_saisie[i].rendreX(), tab_saisie[i].rendreY());
-			tab_mem = tab_saisie;
+		for (int i = 0; i < tab_pts.length; i++) {
+			p.addPoint(tab_pts[i].rendreX(), tab_pts[i].rendreY());
+			tab_mem = tab_pts;
 		}
 	}
 	
