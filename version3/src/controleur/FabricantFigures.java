@@ -59,7 +59,6 @@ public class FabricantFigures implements MouseListener {
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
-		System.out.println("in fabrciant");
 		ajoutePoint(arg0.getX(), arg0.getY());
 	}
 

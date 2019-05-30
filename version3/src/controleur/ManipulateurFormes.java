@@ -10,10 +10,11 @@ import modele.FigureColoree;
 
 public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
-	private int last_x, last_y, indice, nbf, sel=-1;
+	private int last_x, last_y, indice, nbf, figureSel=-1;
 	private boolean trans = false;
 	private ArrayList<FigureColoree> lfc;
 	private DessinModele model;
+	private int carreSelectionne = -1;
 
 	public ManipulateurFormes(DessinModele p_dm) {
 		model = p_dm;
@@ -40,25 +41,37 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	@Override
 	public void mousePressed(MouseEvent arg0) {
+		last_x = arg0.getX();
+		last_y = arg0.getY();
+
+		if (figureSel>=0) {
+			// il y a une figure selectionnee
+			carreSelectionne = lfc.get(figureSel).carreDeSelection(last_x,last_y); 
+			if (carreSelectionne >=0 ) {
+				model.modeleChange();
+				return;
+			}
+		}
+		carreSelectionne=-1;
+
 		for (FigureColoree f: lfc) {
 			f.deSelectionne();
 		}
 		model.setFigureEnCours(null);
-		last_x = arg0.getX();
-		last_y = arg0.getY();
 		nbf = lfc.size();
-		System.out.println("manipmoise "+nbf);
 		for (int i=0; i<nbf; i++) {
 			if (lfc.get(i).estDedans(last_x, last_y)) {
 				trans = true;
 				model.setFigureEnCours(lfc.get(i));
 				lfc.get(i).selectionne();
-				sel = i;
+				figureSel = i;
 				model.modeleChange();
 				return;
 			}
 		}
-		model.modeleChange();		
+		// clic a cote : deselectionner la figure
+		figureSel=-1;
+		model.modeleChange();
 	}
 
 	@Override
@@ -68,14 +81,22 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		System.out.println("trans");
+		if (figureSel<0) return;
 		FigureColoree fc = model.getFigureEnCours();
-		if (fc != null) {
-			fc.translation(arg0.getX()-last_x, arg0.getY()-last_y);
-			last_x=arg0.getX();
-			last_y=arg0.getY();
-			model.modeleChange();
+		if (fc==null) return;
+		int dx = arg0.getX();
+		int dy = arg0.getY();
+		
+		if (carreSelectionne >= 0) {
+			fc.transformation(dx, dy, carreSelectionne);
+		} else {
+			dx-=last_x;
+			dy-=last_y;
+			fc.translation(dx, dy);
 		}
+		last_x=arg0.getX();
+		last_y=arg0.getY();
+		model.modeleChange();
 	}
 
 	@Override

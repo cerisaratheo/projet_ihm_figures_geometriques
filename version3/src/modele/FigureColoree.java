@@ -60,6 +60,7 @@ public abstract class FigureColoree {
 	public void transformation(int dx, int dy, int indice) {
 		tab_mem[indice].modifierX(dx);
 		tab_mem[indice].modifierY(dy);
+		this.modifierPoints(tab_mem);
 	}
 	
 	public int carreDeSelection(int x, int y) {

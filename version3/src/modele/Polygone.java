@@ -36,7 +36,6 @@ public abstract class Polygone extends FigureColoree {
 		int[] xpoint = new int[nbPoints()];
 		int[] ypoint = new int[nbPoints()];
 		for (int i = 0; i < tab_mem.length; i++) {
-			System.out.println("estDedans polygone "+ tab_mem.length+" "+xpoint.length+" "+nbPoints());
 			xpoint[i] = tab_mem[i].rendreX();
 			ypoint[i] = tab_mem[i].rendreY();
 		}

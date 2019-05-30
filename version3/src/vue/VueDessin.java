@@ -62,7 +62,6 @@ public class VueDessin extends JPanel implements Observer{
 			MouseMotionListener[] tmp = this.getMouseMotionListeners();
 			for (MouseMotionListener m: tmp) this.removeMouseMotionListener(m);
 		}
-		System.out.println("mode creation "+ff);
 		ff.debutCreation(f);
 		this.addMouseListener(ff);
 		this.revalidate();
