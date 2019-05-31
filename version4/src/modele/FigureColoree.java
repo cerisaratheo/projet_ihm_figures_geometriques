@@ -32,6 +32,7 @@ public abstract class FigureColoree {
 			for (int i = 0; i < tab_mem.length; i++) {
 				int x = tab_mem[i].rendreX();
 				int y = tab_mem[i].rendreY();
+				g.setColor(Color.GRAY);
 				g.fillRect(x - TAILLE_CARRE_SELECTION, y - TAILLE_CARRE_SELECTION, TAILLE_CARRE_SELECTION * 2, TAILLE_CARRE_SELECTION * 2);
 			}
 			g.setColor(save);

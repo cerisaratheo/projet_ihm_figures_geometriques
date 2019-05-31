@@ -10,6 +10,7 @@ public class Quadrilatere extends Polygone {
 		return 4;
 	}
 	
+	@Override
 	public FigureColoree recree() {
 		FigureColoree fc = new Quadrilatere();
 		fc.couleur = this.couleur;
