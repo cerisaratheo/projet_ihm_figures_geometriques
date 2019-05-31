@@ -31,6 +31,7 @@ public abstract class Polygone extends FigureColoree {
 		}
 	}
 	
+	@Override
 	public boolean estDedans(int x, int y) {
 		boolean res = false;
 		int[] xpoint = new int[nbPoints()];
