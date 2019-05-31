@@ -12,6 +12,7 @@ import javax.swing.JRadioButton;
 
 import modele.Cercle;
 import modele.DessinModele;
+import modele.Ellipse;
 import modele.FigureColoree;
 import modele.Quadrilatere;
 import modele.Rectangle;
@@ -22,7 +23,7 @@ public class PanneauChoix extends JPanel {
 
 	private DessinModele dmodele;
 	private JRadioButton nouvelleFigure, traceMainLeve, manip;
-	private String[] listFig = { "Choisissez une figure", "Quadrilataire", "Triangle", "Rectangle", "cercle"};
+	private String[] listFig = { "Choisissez une figure", "Quadrilataire", "Triangle", "Rectangle", "cercle", "ellipse"};
 	private JComboBox figList; 
 	private String[] listCoul = { "Choisissez une couleur", "Bleu", "Rouge", "Vert", "Jaune" };
 	private JComboBox coulList;
@@ -147,6 +148,8 @@ public class PanneauChoix extends JPanel {
 			return new Rectangle();
 		case 4 :
 			return new Cercle();
+		case 5 :
+			return new Ellipse();
 		default:
 			return null;
 		}		

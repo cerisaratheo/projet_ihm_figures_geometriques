@@ -41,6 +41,7 @@ public class Cercle extends FigureColoree {
 	
 	@Override
 	public void affiche(Graphics g) {
+		g.setColor(couleur);
 		g.fillOval(xcentre-diametre/2, ycentre-diametre/2, diametre, diametre);
 		super.affiche(g);
 	}

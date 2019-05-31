@@ -62,7 +62,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 		}
 		model.setFigureEnCours(null);
 		nbf = lfc.size();
-		for (int i=0; i<nbf; i++) {
+		for (int i=nbf-1; i>=0; i--) {
 			if (lfc.get(i).estDedans(last_x, last_y)) {
 				trans = true;
 				model.setFigureEnCours(lfc.get(i));

@@ -63,7 +63,6 @@ public class VueDessin extends JPanel implements Observer{
 		}
 		Graphics g = this.getGraphics();
 		if (tf == null) tf = new TraceurFormes(g);
-		System.out.println("passermodedessin " + tf);
 		this.addMouseListener(tf);
 		this.addMouseMotionListener(tf);
 		this.repaint();
