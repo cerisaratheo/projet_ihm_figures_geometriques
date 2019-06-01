@@ -28,10 +28,7 @@ public class Fenetre {
 		principal = new JPanel();
 		fenetre.add(pc, BorderLayout.NORTH);
 		fenetre.add(principal, BorderLayout.CENTER);
-		//FabricantFigures controleur = new FabricantFigures(mod);
 		fenetre.add(vd);
-		//vd.addMouseListener(controleur);
-		//vd.requestFocus();
 		mod.addObserver(vd);
 		mod.modeleChange();
 		fenetre.pack();
