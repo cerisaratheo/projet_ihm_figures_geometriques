@@ -5,6 +5,9 @@ import java.util.*;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * classe servant a creer des traces a main levee
+ */
 public class TraceurFormes extends JPanel implements MouseListener, MouseMotionListener{
 
 	private int last_x, last_y;

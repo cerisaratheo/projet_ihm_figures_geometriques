@@ -2,6 +2,9 @@ package modele;
 
 import java.awt.*;
 
+/**
+ * classe servant a creer des ellipses
+ */
 public class Ellipse extends FigureColoree {
 	
 	/**

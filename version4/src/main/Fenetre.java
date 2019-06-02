@@ -13,6 +13,9 @@ import controleur.PanneauChoix;
 import modele.DessinModele;
 import vue.VueDessin;
 
+/**
+ * classe contenant le main
+ */
 public class Fenetre {
 	
 	private static JPanel principal;

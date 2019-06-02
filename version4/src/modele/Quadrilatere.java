@@ -1,5 +1,8 @@
 package modele;
 
+/**
+ * classe qui gere les quadrilateres
+ */
 public class Quadrilatere extends Polygone {
 
 	/**

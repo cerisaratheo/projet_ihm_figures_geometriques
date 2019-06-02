@@ -2,6 +2,9 @@ package modele;
 
 import java.awt.*;
 
+/**
+ * classe servant a creer des cercles
+ */
 public class Cercle extends FigureColoree {
 	
 	private int xcentre, ycentre, diametre;

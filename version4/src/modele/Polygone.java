@@ -2,10 +2,12 @@ package modele;
 
 import java.awt.*;
 
+/**
+ * classe qui gere les polygones
+ */
 public abstract class Polygone extends FigureColoree {
 
 	protected Polygon p;
-	
 	
 	/**
 	 * construit un polygone

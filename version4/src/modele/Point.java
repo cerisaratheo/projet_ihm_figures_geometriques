@@ -1,5 +1,8 @@
 package modele;
 
+/**
+ * classe servant a gerer des points
+ */
 public class Point {
 
 	private int x, y;

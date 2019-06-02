@@ -7,6 +7,9 @@ import modele.DessinModele;
 import modele.FigureColoree;
 import modele.Point;
 
+/**
+ * classe servant a creer des figures geometriques
+ */
 public class FabricantFigures implements MouseListener {
 	
 	private DessinModele model;

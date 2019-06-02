@@ -1,5 +1,8 @@
 package modele;
 
+/**
+ * classe qui construit les triangles
+ */
 public class Triangle extends Polygone {
 	
 	/**

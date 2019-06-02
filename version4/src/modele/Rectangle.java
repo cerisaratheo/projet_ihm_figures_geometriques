@@ -1,6 +1,10 @@
 package modele;
 
+/**
+ * classe qui construit les rectangles
+ */
 public class Rectangle extends Quadrilatere {
+	
 	private boolean init=false;
 	
 	/**

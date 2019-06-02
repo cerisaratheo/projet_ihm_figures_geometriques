@@ -3,6 +3,9 @@ package modele;
 import java.util.*;
 import java.awt.*;
 
+/**
+ * classe principale du modele
+ */
 public class DessinModele extends Observable {
 	
 	private ArrayList<FigureColoree> lfc = new ArrayList<FigureColoree>();

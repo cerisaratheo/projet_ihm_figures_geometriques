@@ -2,6 +2,9 @@ package modele;
 
 import java.awt.*;
 
+/**
+ * classe servant a gerer des figures colorees
+ */
 public abstract class FigureColoree {
 
 	static final private int TAILLE_CARRE_SELECTION = 5;

@@ -2,6 +2,9 @@ package controleur;
 
 import java.awt.*;
 
+/**
+ * classe servant a creer des traits
+ */
 public class Trait {
 
 	private int debx, deby, finx, finy;

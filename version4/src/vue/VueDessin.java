@@ -14,6 +14,9 @@ import controleur.Trait;
 import modele.DessinModele;
 import modele.FigureColoree;
 
+/**
+ * classe unique de la vue
+ */
 public class VueDessin extends JPanel implements Observer{
 	
 	private ArrayList<FigureColoree> lfc;
