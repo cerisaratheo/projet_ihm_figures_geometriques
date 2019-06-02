@@ -20,11 +20,17 @@ public class VueDessin extends JPanel implements Observer{
 	private ManipulateurFormes mf = null;
 	private FabricantFigures ff = null;
 	private TraceurFormes tf;
-
+	
+	/**
+	 * construit la vue et initialise la liste de figures
+	 */
 	public VueDessin() {
 		lfc = new ArrayList<FigureColoree>();
 	}
 	
+	/**
+	 * methode qui met a jour les modifcations de la figure
+	 */
 	public void update(Observable obs, Object obj) {
 		DessinModele dessin = ((DessinModele)obs);
 		lfc = dessin.getLfc();
@@ -34,6 +40,9 @@ public class VueDessin extends JPanel implements Observer{
 		if (ff==null) ff = new FabricantFigures(dessin);
 	}
 	
+	/**
+	 * methode qui affiche les elements graphiques
+	 */
 	public void paintComponent(Graphics g) {
 		
 		super.paintComponent(g);
@@ -48,10 +57,17 @@ public class VueDessin extends JPanel implements Observer{
 		}
 	}
 	
+	/**
+	 * methode qui chage la couleur d'un trait 
+	 * @param c
+	 */
 	public void trace(Color c) {
 		if (tf != null) tf.setColor(c);
 	}
 
+	/**
+	 * methode qui change le mode en mode dessin (trace a main levee)
+	 */
 	public void passerModeDessin() {
 		{
 			MouseListener[] tmp = this.getMouseListeners();
@@ -68,6 +84,9 @@ public class VueDessin extends JPanel implements Observer{
 		this.repaint();
 	}
 
+	/**
+	 * methode qui change le mode en mode manipulation
+	 */
 	public void passerModeManip() {
 		{
 			MouseListener[] tmp = this.getMouseListeners();
@@ -82,6 +101,10 @@ public class VueDessin extends JPanel implements Observer{
 		this.repaint();
 	}
 	
+	/**
+	 * methode qui change le mode en mode creation de figure
+	 * @param f
+	 */
 	public void passerModeCreation(FigureColoree f) {
 		{
 			MouseListener[] tmp = this.getMouseListeners();

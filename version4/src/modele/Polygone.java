@@ -7,21 +7,33 @@ public abstract class Polygone extends FigureColoree {
 	protected Polygon p;
 	
 	
+	/**
+	 * construit un polygone
+	 */
 	public Polygone() {
 		super();
 		this.p = new Polygon();
 	}
 	
+	/**
+	 * methode qui permet d'afficher le polygone	
+	 */
 	@Override
 	public void affiche(Graphics g) {
 		super.affiche(g);
 		g.fillPolygon(this.p);
 	}
 	
+	/**
+	 * methode qui retourne le nombre de clics pour creer la figure en fonction du nombre de points
+	 */
 	public int nbClics() {
 		return nbPoints();
 	}
 	
+	/**
+	 * methode qui permet de modifier les points du tableau de points
+	 */
 	@Override
 	public void modifierPoints(Point[] tab_pts) {
 		p.reset();
@@ -31,6 +43,10 @@ public abstract class Polygone extends FigureColoree {
 		}
 	}
 	
+	/**
+	 * methode qui permet de savoir si on se trouve dans le polygone ou non
+	 * @return un booleen qui vaut true si on clique dans le polygone
+	 */
 	@Override
 	public boolean estDedans(int x, int y) {
 		boolean res = false;

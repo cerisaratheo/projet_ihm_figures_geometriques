@@ -16,10 +16,17 @@ public class TraceurFormes extends JPanel implements MouseListener, MouseMotionL
 		g=p_g;
 	}
 
+	/**
+	 * methode pour definir la couleur d'un trait
+	 * @param c couleur du trait
+	 */
 	public void setColor(Color c) {
 		couleurTrait=c;
 	}
 
+	/**
+	 * @return le tableau de traits contenant tous les traits deja effectues
+	 */
 	public ArrayList<Trait> getTableauTraits() {
 		return tableauTraits;
 	}

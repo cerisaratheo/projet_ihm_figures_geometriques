@@ -17,6 +17,10 @@ public class Fenetre {
 	
 	private static JPanel principal;
 
+	/**
+	 * main
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		DessinModele mod = new DessinModele();
 

@@ -25,7 +25,7 @@ public class FabricantFigures implements MouseListener {
 	}
 
 	/**
-	 * methode pour ajouter les points placés par l'utilisateur dans le tableau de points et ajouter la figure en cours à la liste des figures créées
+	 * methode pour ajouter les points places par l'utilisateur dans le tableau de points et ajouter la figure en cours a la liste des figures creees
 	 * @param x abscisse d'un point
 	 * @param y ordonnee d'un point
 	 */
@@ -40,11 +40,19 @@ public class FabricantFigures implements MouseListener {
 		}
 	}
 	
+	/**
+	 * constructeur qui permet d'associer un DessinModele dans FabricantFigure
+	 * @param dm
+	 */
 	public FabricantFigures(DessinModele dm) {
 		
 		this.model=dm;
 	}
 
+	/**
+	 * setter de DessinModel
+	 * @param m modele a associer
+	 */
 	public void setModele(DessinModele m) {
 		model = m;
 	}
@@ -66,6 +74,9 @@ public class FabricantFigures implements MouseListener {
 		
 	}
 
+	/**
+	 * methode qui ajoute ajoute le point dans le tableau de points a chaque clic
+	 */
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		ajoutePoint(arg0.getX(), arg0.getY());

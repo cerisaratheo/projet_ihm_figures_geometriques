@@ -6,10 +6,16 @@ public class Cercle extends FigureColoree {
 	
 	private int xcentre, ycentre, diametre;
 	
+	/**
+	 * construit un cercle
+	 */
 	public Cercle() {
 		super();
 	}
 
+	/**
+	 * methode qui recree la figure apres l'avoir modifiee
+	 */
 	@Override
 	public FigureColoree recree() {
 		FigureColoree fc = new Cercle();
@@ -17,16 +23,26 @@ public class Cercle extends FigureColoree {
 		return fc;
 	}
 
+	/**
+	 * methode qui indique le nombre de clics necessaires pour creer la figure
+	 * @return le nombre de clics necessaires pour creer un cercle
+	 */
 	@Override
 	public int nbPoints() {
 		return 2;
 	}
 
+	/**
+	 * methode qui retourne le nombre de clics pour creer la figure en fonction du nombre de points
+	 */
 	@Override
 	public int nbClics() {
 		return nbPoints();
 	}
 
+	/**
+	 * methode qui permet de modifier les points du tableau de points
+	 */
 	@Override
 	public void modifierPoints(Point[] tab_saisie) {
 		xcentre = tab_saisie[0].rendreX();
@@ -39,6 +55,9 @@ public class Cercle extends FigureColoree {
 		tab_mem[1] = new Point(xcentre+diametre/2, ycentre);
 	}
 	
+	/**
+	 * methode qui permet d'afficher le cercle	
+	 */
 	@Override
 	public void affiche(Graphics g) {
 		g.setColor(couleur);
@@ -46,6 +65,10 @@ public class Cercle extends FigureColoree {
 		super.affiche(g);
 	}
 
+	/**
+	 * methode qui permet de savoir si on se trouve dans un cercle ou non
+	 * @return un booleen qui vaut true si on clique dans un cercle
+	 */
 	@Override
 	public boolean estDedans(int x, int y) {
 		double distanceAuCentre = Math.sqrt(Math.pow((x-xcentre),2) + Math.pow((y-ycentre),2));

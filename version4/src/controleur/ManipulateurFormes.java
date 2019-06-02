@@ -10,8 +10,7 @@ import modele.FigureColoree;
 import vue.VueDessin;
 
 /**
- * @author théo
- *
+ * classe servant a manipuler des figures
  */
 public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
@@ -114,7 +113,7 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 	}
 
 	/**
-	 * @return le nombre de figures créées
+	 * @return le nombre de figures creees
 	 */
 	public int nbFigures() {
 		return nbf;

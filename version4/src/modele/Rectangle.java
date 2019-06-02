@@ -3,10 +3,16 @@ package modele;
 public class Rectangle extends Quadrilatere {
 	private boolean init=false;
 	
+	/**
+	 * construit un rectangle
+	 */
 	public Rectangle() {
 		super();
 	}
 	
+	/**
+	 * methode qui recree la figure apres l'avoir modifiee
+	 */
 	@Override
 	public FigureColoree recree() {
 		FigureColoree fc = new Rectangle();
@@ -14,11 +20,18 @@ public class Rectangle extends Quadrilatere {
 		return fc;
 	}
 
+	/**
+	 * methode qui indique le nombre de clics necessaires pour creer la figure
+	 * @return le nombre de clics necessaires pour creer un rectangle
+	 */
 	@Override
 	public int nbClics() {
 		return 2;
 	}
 	
+	/**
+	 * methode qui mofifie les points du tableau de points de la figure
+	 */
 	@Override
 	public void modifierPoints(Point[] tab_pts) {
 		if (!init) {
@@ -39,6 +52,11 @@ public class Rectangle extends Quadrilatere {
 		} else super.modifierPoints(tab_pts);
 	}
 	
+	/**
+	 * methode qui modifie less coordonnees d'un point a l'indice donne
+	 * @param dx et dy coordonnees du point a modifier
+	 * @param indice dans le tableau du point a modifier
+	 */
 	public void transfomation(int dx, int dy, int indice) {
 		tab_mem[indice].modifierX(dx);
 		tab_mem[indice].modifierY(dy);

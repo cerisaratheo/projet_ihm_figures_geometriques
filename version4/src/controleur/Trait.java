@@ -7,6 +7,11 @@ public class Trait {
 	private int debx, deby, finx, finy;
 	private Color couleur;
 	
+	/**
+	 * cree un nouveau trait
+	 * @param dx, fx, dy, fy coordonnees du trait
+	 * @param c couleur du trait
+	 */
 	public Trait(int dx,int fx,int dy,int fy,Color c) {
 		debx = dx;
 		deby = dy;
