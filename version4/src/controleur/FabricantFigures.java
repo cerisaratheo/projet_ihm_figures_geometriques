@@ -14,12 +14,21 @@ public class FabricantFigures implements MouseListener {
 	private int nbClic=0;
 	FigureColoree figureEnCours=null;
 
+	/**
+	 * methode pour commencer une figure
+	 * @param f figure en cours
+	 */
 	public void debutCreation(FigureColoree f) {
 		figureEnCours=f;
 		pointsCliques = new Point[f.nbClics()];
 		nbClic=0;
 	}
 
+	/**
+	 * methode pour ajouter les points placés par l'utilisateur dans le tableau de points et ajouter la figure en cours à la liste des figures créées
+	 * @param x abscisse d'un point
+	 * @param y ordonnee d'un point
+	 */
 	public void ajoutePoint(int x, int y) {
 		pointsCliques[nbClic++] = new Point(x,y);
 		if (nbClic == pointsCliques.length) {

@@ -9,6 +9,10 @@ import modele.DessinModele;
 import modele.FigureColoree;
 import vue.VueDessin;
 
+/**
+ * @author théo
+ *
+ */
 public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	private int last_x, last_y, indice, nbf, figureSel=-1;
@@ -109,11 +113,11 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	}
 
+	/**
+	 * @return le nombre de figures créées
+	 */
 	public int nbFigures() {
 		return nbf;
 	}
 
-	public void selectionProchaineFigure() {
-
-	}
 }
