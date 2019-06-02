@@ -35,10 +35,10 @@ public class PanneauChoix extends JPanel {
 	private JComboBox coulList;
 	private boolean nf, tml, man;
 	private VueDessin vdessin;
-        private JButton up = new JButton("up");
-        private JButton down = new JButton("down");
-        private JButton del = new JButton("del");
-	
+	private JButton up = new JButton("up");
+	private JButton down = new JButton("down");
+	private JButton del = new JButton("del");
+
 	/**
 	 * cree les boutons et gere l'action des boutons et des menus deroulants
 	 * @param m modele associe
@@ -64,9 +64,9 @@ public class PanneauChoix extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (nouvelleFigure.isSelected()) {
-                                       up.setEnabled(false);
-                                       down.setEnabled(false);
-                                       del.setEnabled(false);
+					up.setEnabled(false);
+					down.setEnabled(false);
+					del.setEnabled(false);
 					for (FigureColoree f: dmodele.getLfc()) {
 						f.deSelectionne();
 					}
@@ -85,9 +85,9 @@ public class PanneauChoix extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (traceMainLeve.isSelected()) {
-                                       up.setEnabled(false);
-                                       down.setEnabled(false);
-                                       del.setEnabled(false);
+					up.setEnabled(false);
+					down.setEnabled(false);
+					del.setEnabled(false);
 					for (FigureColoree f: dmodele.getLfc()) {
 						f.deSelectionne();
 					}
@@ -107,9 +107,9 @@ public class PanneauChoix extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				if (manip.isSelected()) {
-                                       up.setEnabled(true);
-                                       down.setEnabled(true);
-                                       del.setEnabled(true);
+					up.setEnabled(true);
+					down.setEnabled(true);
+					del.setEnabled(true);
 					for (FigureColoree f: dmodele.getLfc()) {
 						f.deSelectionne();
 					}
@@ -139,51 +139,53 @@ public class PanneauChoix extends JPanel {
 			}
 		});
 
-               up.addActionListener(new ActionListener() {
+		up.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                            FigureColoree ff = dmodele.getFigureEnCours();
-                            ArrayList<FigureColoree> lfc = dmodele.getLfc();
-                            for (int i=0;i<lfc.size();i++) {
-                                FigureColoree f = lfc.get(i);
-                                if (f==ff) {
-                                    if (i<lfc.size()-1) {
-                                        lfc.remove(i);
-                                        lfc.add(i+1,f);
-                                    }
-                                    break;
-                                }
-                            }
-                            dmodele.modeleChange();
-                        }
-               });
-               down.addActionListener(new ActionListener() {
+				FigureColoree ff = dmodele.getFigureEnCours();
+				ArrayList<FigureColoree> lfc = dmodele.getLfc();
+				for (int i=0;i<lfc.size();i++) {
+					FigureColoree f = lfc.get(i);
+					if (f==ff) {
+						if (i<lfc.size()-1) {
+							lfc.remove(i);
+							lfc.add(i+1,f);
+						}
+						break;
+					}
+				}
+				dmodele.modeleChange();
+			}
+		});
+		down.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                            FigureColoree ff = dmodele.getFigureEnCours();
-                            ArrayList<FigureColoree> lfc = dmodele.getLfc();
-                            for (int i=0;i<lfc.size();i++) {
-                                FigureColoree f = lfc.get(i);
-                                if (f==ff) {
-                                    if (i>0) {
-                                        lfc.remove(i);
-                                        lfc.add(i-1,f);
-                                    }
-                                    break;
-                                }
-                            }
-                            dmodele.modeleChange();
-                        }
-               });
-               del.addActionListener(new ActionListener() {
+				FigureColoree ff = dmodele.getFigureEnCours();
+				ArrayList<FigureColoree> lfc = dmodele.getLfc();
+				for (int i=0;i<lfc.size();i++) {
+					FigureColoree f = lfc.get(i);
+					if (f==ff) {
+						if (i>0) {
+							lfc.remove(i);
+							lfc.add(i-1,f);
+						}
+						break;
+					}
+				}
+				dmodele.modeleChange();
+			}
+		});
+		del.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-                            FigureColoree ff = dmodele.getFigureEnCours();
-                            ArrayList<FigureColoree> lfc = dmodele.getLfc();
-                            lfc.remove(ff);
-                            dmodele.modeleChange();
-                        }
-               });
-               up.setEnabled(false);
-               down.setEnabled(false);
-               del.setEnabled(false);
+				FigureColoree ff = dmodele.getFigureEnCours();
+				ArrayList<FigureColoree> lfc = dmodele.getLfc();
+				lfc.remove(ff);
+				dmodele.setFigureEnCours(null);
+				dmodele.modeleChange();
+				
+			}
+		});
+		up.setEnabled(false);
+		down.setEnabled(false);
+		del.setEnabled(false);
 
 		setLayout(new BorderLayout());
 		JPanel radioBox = new JPanel(); 
@@ -212,7 +214,7 @@ public class PanneauChoix extends JPanel {
 		vdessin.passerModeCreation(f);
 		return true;
 	}
-	
+
 	/**
 	 * methode pour creer une nouvelle figure
 	 * @return la nouvelle figure

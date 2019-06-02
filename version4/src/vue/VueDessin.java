@@ -38,6 +38,7 @@ public class VueDessin extends JPanel implements Observer{
 		this.requestFocus();
 		if (mf==null) mf = new ManipulateurFormes(dessin, this);
 		if (ff==null) ff = new FabricantFigures(dessin);
+		if (dessin.getFigureEnCours()==null) mf.unselectFig();
 	}
 	
 	/**

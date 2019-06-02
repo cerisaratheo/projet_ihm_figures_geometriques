@@ -43,6 +43,9 @@ public class TraceurFormes extends JPanel implements MouseListener, MouseMotionL
 		}
 	}
 
+	/**
+	 * methode permettant de tracer un trait lorsque la souris est deplacee
+	 */
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
 		last_x = arg0.getX();

@@ -12,19 +12,24 @@ import vue.VueDessin;
 /**
  * classe servant a manipuler des figures
  */
-public class ManipulateurFormes implements MouseListener, MouseMotionListener{
+public class ManipulateurFormes implements MouseListener, MouseMotionListener {
 
 	private int last_x, last_y, indice, nbf, figureSel=-1;
-	private boolean trans = false;
 	private ArrayList<FigureColoree> lfc;
 	private DessinModele model;
 	private int carreSelectionne = -1;
-	private VueDessin vd;
 
+	/**
+	 * cree un manipulateur de formes et l'associe avec un modele et une vue 
+	 * @param p_dm et p_vd modele et vue a associer avec le manipulateur
+	 */
 	public ManipulateurFormes(DessinModele p_dm, VueDessin p_vd) {
 		model = p_dm;
-		vd = p_vd;
 		lfc = p_dm.getLfc();
+	}
+	
+	public void unselectFig() {
+		figureSel=-1;
 	}
 
 	@Override
@@ -45,6 +50,9 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	}
 
+	/**
+	 * methode pour selectionner ou deselectionner une figure
+	 */
 	@Override
 	public void mousePressed(MouseEvent arg0) {
 		last_x = arg0.getX();
@@ -67,7 +75,6 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 		nbf = lfc.size();
 		for (int i=nbf-1; i>=0; i--) {
 			if (lfc.get(i).estDedans(last_x, last_y)) {
-				trans = true;
 				model.setFigureEnCours(lfc.get(i));
 				lfc.get(i).selectionne();
 				figureSel = i;
@@ -86,6 +93,9 @@ public class ManipulateurFormes implements MouseListener, MouseMotionListener{
 
 	}
 
+	/**
+	 * methode pour deplacer une figure selectionnee
+	 */
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
 		if (figureSel<0) return;
